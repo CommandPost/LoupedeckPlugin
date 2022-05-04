@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("CommandPost")]
 [assembly: AssemblyDescription("Allows you to trigger CommandPost Actions within Loupedeck")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("LateNite Films Pty Ltd")]
+[assembly: AssemblyCompany("CommandPost Developers")]
 [assembly: AssemblyProduct("CommandPost")]
 [assembly: AssemblyCopyright("Copyright © 2022 Chris Hocking. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
