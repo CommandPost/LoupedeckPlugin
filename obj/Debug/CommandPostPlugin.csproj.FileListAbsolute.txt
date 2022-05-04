@@ -1,7 +1,0 @@
-/Users/chrishocking/.local/share/Loupedeck/Plugins/CommandPostPlugin.dll.config
-/Users/chrishocking/.local/share/Loupedeck/Plugins/CommandPostPlugin.dll
-/Users/chrishocking/.local/share/Loupedeck/Plugins/CommandPostPlugin.pdb
-/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/obj/Debug/CommandPostPlugin.csproj.CoreCompileInputs.cache
-/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/obj/Debug/CommandPostPlugin.csproj.CopyComplete
-/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/obj/Debug/CommandPostPlugin.dll
-/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/obj/Debug/CommandPostPlugin.pdb
