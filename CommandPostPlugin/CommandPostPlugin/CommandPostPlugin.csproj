@@ -54,6 +54,7 @@
     <Compile Include="CommandPostPlugin.cs" />
     <Compile Include="Commands\SimpleAdjustment.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
+    <Compile Include="Commands\ToggleSwitchButton.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -61,6 +62,8 @@
     <EmbeddedResource Include="Resources\Icon\icon-256.png" />
     <EmbeddedResource Include="Resources\Icon\icon-32.png" />
     <EmbeddedResource Include="Resources\Icon\icon-48.png" />
+    <EmbeddedResource Include="Resources\ToggleSwitchButton\ToggleSwitchButtonOff.png" />
+    <EmbeddedResource Include="Resources\ToggleSwitchButton\ToggleSwitchButtonOn.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
