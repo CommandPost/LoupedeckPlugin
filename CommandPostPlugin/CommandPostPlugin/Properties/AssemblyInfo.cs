@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CommandPost plugin for Loupedeck")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("CommandPost")]
+[assembly: AssemblyDescription("Allows you to trigger CommandPost Actions within Loupedeck")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("LoupeDeck Oy")]
-[assembly: AssemblyProduct("Loupedeck2")]
-[assembly: AssemblyCopyright("Copyright © 2022 LoupeDeck Oy. All rights reserved.")]
+[assembly: AssemblyCompany("LateNite Films Pty Ltd")]
+[assembly: AssemblyProduct("CommandPost")]
+[assembly: AssemblyCopyright("Copyright © 2022 Chris Hocking. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
