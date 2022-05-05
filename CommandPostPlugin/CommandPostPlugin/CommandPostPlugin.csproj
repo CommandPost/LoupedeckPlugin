@@ -61,6 +61,9 @@
     <Compile Include="Commands\API Tests\SimpleCommand.cs" />
     <Compile Include="Commands\API Tests\ToggleSwitchButton.cs" />
     <Compile Include="Commands\API Tests\ButtonSwitchesCommand.cs" />
+    <Compile Include="Commands\API Tests\ProfileActionText.cs" />
+    <Compile Include="Commands\API Tests\ProfileActionTree.cs" />
+    <Compile Include="Commands\API Tests\ProfileActionList.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
