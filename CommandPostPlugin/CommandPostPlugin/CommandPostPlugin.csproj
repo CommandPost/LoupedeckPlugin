@@ -55,6 +55,8 @@
     <Compile Include="Commands\SimpleAdjustment.cs" />
     <Compile Include="Commands\SimpleCommand.cs" />
     <Compile Include="Commands\ToggleSwitchButton.cs" />
+    <Compile Include="WheelTools\WheelToolColorWheelBase.cs" />
+    <Compile Include="WheelTools\WheelToolShuttle.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -64,9 +66,11 @@
     <EmbeddedResource Include="Resources\Icon\icon-48.png" />
     <EmbeddedResource Include="Resources\ToggleSwitchButton\ToggleSwitchButtonOff.png" />
     <EmbeddedResource Include="Resources\ToggleSwitchButton\ToggleSwitchButtonOn.png" />
+    <EmbeddedResource Include="WheelTools\WheelToolColorWheelBase.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="WheelTools\WheelToolShuttle.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
