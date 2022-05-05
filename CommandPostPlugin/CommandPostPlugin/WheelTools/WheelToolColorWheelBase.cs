@@ -31,7 +31,7 @@
 
         private BitmapImage GetEmbeddedImage()
         {
-            using (var backgroundImage = EmbeddedResources.ReadImage("Loupedeck.CommandPostPlugin.WheelTools.WheelToolColorWheelBase.png"))
+            using (var backgroundImage = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("WheelToolColorWheelBase.png")))
             {
                 using (var bitmapBuilder = this.CreateBitmapBuilder())
                 {

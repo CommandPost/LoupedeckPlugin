@@ -13,7 +13,7 @@
 
         protected override void OnStart() => this.Draw();
 
-        protected override BitmapImage CreateImage() => EmbeddedResources.ReadImage("Loupedeck.CommandPostPlugin.WheelTools.WheelToolShuttle.png");
+        protected override BitmapImage CreateImage() => EmbeddedResources.ReadImage(EmbeddedResources.FindFile("WheelToolShuttle.png"));
 
         protected override void OnTouchEvent(DeviceTouchEvent deviceTouchEvent)
         {
