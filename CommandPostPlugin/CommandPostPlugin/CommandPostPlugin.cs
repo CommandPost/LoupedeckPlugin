@@ -1,6 +1,9 @@
 namespace Loupedeck.CommandPostPlugin
 {
     using System;
+    using System.Linq;
+    using System.Collections.Generic;
+
     using Fleck;
 
     public class CommandPostPlugin : Plugin
@@ -26,14 +29,39 @@ namespace Loupedeck.CommandPostPlugin
             this.Info.Icon256x256 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-256.png"));
 
             //
-            // Start Websocket Server:
+            // Start WebSocket Server:
             //
-            var commandpostWebSocketServer = new WebSocketServer("ws://0.0.0.0:54475");
+            this.SetupSocketServer();
+        }
+
+        /// 
+        /// WebSocket Server:
+        /// 
+        public static WebSocketServer commandpostWebSocketServer;
+        public static List<IWebSocketConnection> allSockets = new List<IWebSocketConnection>();
+        public void SetupSocketServer()
+        {
+            var allSockets = new List<IWebSocketConnection>();
+
+            commandpostWebSocketServer = new WebSocketServer("ws://0.0.0.0:54475");
             commandpostWebSocketServer.Start(socket =>
             {
-                socket.OnOpen = () => Console.WriteLine("Open!");
-                socket.OnClose = () => Console.WriteLine("Close!");
-                socket.OnMessage = message => socket.Send(message);
+                socket.OnOpen = () =>
+                {
+                    Console.WriteLine("Open!");
+                    allSockets.Add(socket);
+                };
+                socket.OnClose = () =>
+                {
+                    Console.WriteLine("Close!");
+                    allSockets.Remove(socket);
+                };
+                socket.OnMessage = message =>
+                {
+                    Console.WriteLine("Client Says: " + message);
+                    socket.Send(message);
+                    allSockets.ToList().ForEach(s => s.Send("Echo: " + message));
+                };
             });
         }
 
@@ -56,5 +84,7 @@ namespace Loupedeck.CommandPostPlugin
         public override void ApplyAdjustment(String adjustmentName, String parameter, Int32 diff)
         {
         }
-    }
+    }   
 }
+
+

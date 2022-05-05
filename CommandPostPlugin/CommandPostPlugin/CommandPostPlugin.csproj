@@ -60,6 +60,7 @@
     <Compile Include="Commands\API Tests\SimpleAdjustment.cs" />
     <Compile Include="Commands\API Tests\SimpleCommand.cs" />
     <Compile Include="Commands\API Tests\ToggleSwitchButton.cs" />
+    <Compile Include="Commands\API Tests\ButtonSwitchesCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />

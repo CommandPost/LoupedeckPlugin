@@ -1,6 +1,7 @@
 ﻿namespace Loupedeck.CommandPostPlugin
 {
     using System;
+    using Fleck;
 
     class CounterAdjustment : PluginDynamicAdjustment
     {
@@ -17,6 +18,12 @@
             //
             this._counter += ticks; // increase or decrease counter on the number of ticks
             this.ActionImageChanged(actionParameter);
+
+
+            foreach (IWebSocketConnection socket in Loupedeck.CommandPostPlugin.CommandPostPlugin.allSockets)
+            {
+                socket.Send("apply adjustment");
+            }
         }
 
         protected override void RunCommand(String actionParameter)
@@ -26,6 +33,11 @@
             //
             this._counter = 0; // reset counter to 0
             this.ActionImageChanged(actionParameter);
+
+            foreach (IWebSocketConnection socket in Loupedeck.CommandPostPlugin.CommandPostPlugin.allSockets)
+            {
+                socket.Send("run command");
+            }
         }
 
         protected override String GetAdjustmentValue(String actionParameter)
