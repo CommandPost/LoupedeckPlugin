@@ -38,10 +38,10 @@ namespace Loupedeck.CommandPostPlugin
         /// WebSocket Server:
         /// 
         public static WebSocketServer commandpostWebSocketServer;
-        public static List<IWebSocketConnection> allSockets = new List<IWebSocketConnection>();
+        public static List<IWebSocketConnection> allSockets;
         public void SetupSocketServer()
         {
-            var allSockets = new List<IWebSocketConnection>();
+            allSockets = new List<IWebSocketConnection>();
 
             commandpostWebSocketServer = new WebSocketServer("ws://0.0.0.0:54475");
             commandpostWebSocketServer.Start(socket =>

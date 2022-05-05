@@ -1,7 +1,7 @@
 ﻿namespace Loupedeck.CommandPostPlugin
 {
     using System;
-    using Fleck;
+    using System.Linq;
 
     class SimpleCommand : PluginDynamicCommand
     {
@@ -14,10 +14,15 @@
             //
             // This is what's triggered when you run the "Simple Command" (i.e. you press a button):
             //
-            foreach (IWebSocketConnection socket in Loupedeck.CommandPostPlugin.CommandPostPlugin.allSockets)
-            {
-                socket.Send("simple command");
-            }
+            Console.WriteLine("SimpleCommand");
+
+            // Send message to sockets:            
+            var allSockets = CommandPostPlugin.allSockets;
+            allSockets.ToList().ForEach(s => {
+                s.Send("SimpleCommand");
+                Console.WriteLine("SimpleCommand sent to Socket");
+            });
+
         }
     }
 }
