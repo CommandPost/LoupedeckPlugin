@@ -93,7 +93,6 @@
     <Compile Include="CommandPostApplication.cs" />
     <Compile Include="CommandPostPlugin.cs" />
     <Compile Include="WheelTools\WheelToolColorWheelBase.cs" />
-    <Compile Include="WheelTools\WheelToolShuttle.cs" />
     <Compile Include="Commands\Final Cut Pro\Video Inspector\Opacity.cs" />
     <Compile Include="Commands\CommandPost\Favourites.cs" />
     <Compile Include="Models\Events\ActionUpdatedEventArgs.cs" />
