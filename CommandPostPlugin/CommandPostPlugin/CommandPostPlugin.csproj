@@ -113,19 +113,11 @@
     <None Include="App.config" />
     <None Include="Resources\WheelTools\WheelToolShuttle\WheelToolShuttle.png" />
     <None Include="packages.config" />
-    <None Include="Commands\API Tests\ButtonSwitchesCommand.cs" />
-    <None Include="Commands\API Tests\ProfileActionText.cs" />
-    <None Include="Commands\API Tests\ProfileActionTree.cs" />
-    <None Include="Commands\API Tests\SimpleAdjustment.cs" />
-    <None Include="Commands\API Tests\SimpleCommand.cs" />
-    <None Include="Commands\API Tests\ToggleSwitchButton.cs" />
-    <None Include="Commands\API Tests\ProfileActionList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Resources\Icon\" />
     <Folder Include="Commands\" />
-    <Folder Include="Commands\API Tests\" />
     <Folder Include="Resources\WheelTools\" />
     <Folder Include="Resources\WheelTools\WheelToolShuttle\" />
     <Folder Include="Resources\WheelTools\WheelToolColorWheelBase\" />
