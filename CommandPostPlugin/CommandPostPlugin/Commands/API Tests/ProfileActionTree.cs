@@ -4,8 +4,8 @@
 namespace Loupedeck.CommandPostPlugin
 {
     using System;
-
-    using Fleck;
+    using System.Linq;
+    using System.Text.Json;
 
     class ProfileActionTree : PluginDynamicCommand
     {
@@ -49,13 +49,19 @@ namespace Loupedeck.CommandPostPlugin
 
         protected override void RunCommand(String actionParameter)
         {
+            //            
+            // Send WebSocket message when the action is triggered via button press:
             //
-            // This is what's triggered when you run the "Simple Command" (i.e. you press a button):
-            //
-            foreach (IWebSocketConnection socket in Loupedeck.CommandPostPlugin.CommandPostPlugin.allSockets)
+            var message = new WebSocketMessage
             {
-                socket.Send(actionParameter);
-            }
+                ActionName = "SimpleCommand",
+            };
+            var jsonString = JsonSerializer.Serialize(message);
+            var allSockets = CommandPostPlugin.allSockets;
+            allSockets.ToList().ForEach(socket => {
+                Console.WriteLine("SimpleCommand");
+                socket.Send(jsonString);
+            });
         }
     }
 }

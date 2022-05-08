@@ -5,7 +5,6 @@
 
     class CounterAdjustment : PluginDynamicAdjustment
     {
-        private Int32 _counter = 0;
 
         public CounterAdjustment() : base("Simple Adjustment", "Triggers a simple adjustment", "API Tests", true)
         {

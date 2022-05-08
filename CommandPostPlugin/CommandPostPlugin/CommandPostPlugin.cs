@@ -2,12 +2,24 @@ namespace Loupedeck.CommandPostPlugin
 {
     using System;
     using System.Linq;
+    using System.Text.Json;
     using System.Collections.Generic;
 
-    using Fleck;
+    using Loupedeck.CommandPostPlugin.Models.Events;
+
+    using Fleck;    
+
+    public class WebSocketMessage
+    {
+        public String MessageType { get; set; }
+        public String ActionName { get; set; }
+        public String ActionValue { get; set; }
+    }
 
     public class CommandPostPlugin : Plugin
     {
+        public event EventHandler<ActionValueUpdatedEventArgs> ActionValueUpdatedEvents;
+
         //
         // Does not require an application to be in the foreground or any application to be running locally at all:
         //
@@ -23,15 +35,23 @@ namespace Loupedeck.CommandPostPlugin
             //
             // Load CommandPost Icon from the Embedded Resources:
             //
-            this.Info.Icon16x16 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-16.png"));
-            this.Info.Icon32x32 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-32.png"));
-            this.Info.Icon48x48 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-48.png"));
-            this.Info.Icon256x256 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-256.png"));
+            this.LoadIcons();
 
             //
             // Start WebSocket Server:
             //
             this.SetupSocketServer();
+        }
+
+        ///
+        /// Load Icons:
+        ///         
+        public void LoadIcons()
+        {
+            this.Info.Icon16x16 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-16.png"));
+            this.Info.Icon32x32 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-32.png"));
+            this.Info.Icon48x48 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-48.png"));
+            this.Info.Icon256x256 = EmbeddedResources.ReadImage(EmbeddedResources.FindFile("icon-256.png"));
         }
 
         /// 
@@ -48,26 +68,48 @@ namespace Loupedeck.CommandPostPlugin
             {
                 socket.OnOpen = () =>
                 {
-                    Console.WriteLine("Open!");
+                    //
+                    // WebSocket Open:
+                    //
                     allSockets.Add(socket);
                 };
                 socket.OnClose = () =>
                 {
-                    Console.WriteLine("Close!");
+                    //
+                    // WebSocket Closed:
+                    //
                     allSockets.Remove(socket);
                 };
                 socket.OnMessage = message =>
                 {
-                    Console.WriteLine("Client Says: " + message);
-                    socket.Send(message);
-                    allSockets.ToList().ForEach(s => s.Send("Echo: " + message));
+                    //
+                    // WebSocket Message Recieved:
+                    //
+                    WebSocketMessage incomingMessage = JsonSerializer.Deserialize<WebSocketMessage>(message);
+                    if (incomingMessage.MessageType == "UpdateDisplay")
+                    {
+                        //
+                        // Update Display:
+                        //
+                        var actionValueUpdatedEventArgs = new ActionValueUpdatedEventArgs(incomingMessage.ActionName, incomingMessage.ActionValue);
+                        ActionValueUpdatedEvents?.Invoke(this, actionValueUpdatedEventArgs);
+                    } else if (incomingMessage.MessageType == "Ping") {
+                        //
+                        // Reply to Ping:
+                        //
+                        var jsonString = JsonSerializer.Serialize(new
+                        {
+                            actionName = "pong",                            
+                        });                        
+                        allSockets.ToList().ForEach(s => s.Send(jsonString));
+                    }
                 };
             });
         }
 
         public override void Unload()
         {
-        }
+        }   
 
         private void OnApplicationStarted(Object sender, EventArgs e)
         {

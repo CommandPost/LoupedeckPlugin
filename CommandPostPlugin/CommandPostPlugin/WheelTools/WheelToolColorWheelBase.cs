@@ -1,6 +1,7 @@
 ﻿namespace Loupedeck.CommandPostPlugin
 {
     using System;
+    using System.Linq;
 
     using Loupedeck.Devices.Loupedeck2Devices;
 
@@ -52,14 +53,22 @@
             // RESET
             if (DeviceTouchEventType.DoubleTap == deviceTouchEvent.EventType)
             {                
-                Tracer.Trace($"Wheel Double tap: reset {this._commandName}");
-                this.ExecuteAction(this._commandName, this._adjustmentParameter, 0);
+                //Tracer.Trace($"Wheel Double tap: reset {this._commandName}");
+                //this.ExecuteAction(this._commandName, this._adjustmentParameter, 0);
+
+                // Send message to sockets:            
+                var allSockets = CommandPostPlugin.allSockets;
+                allSockets.ToList().ForEach(s => {
+                    s.Send("Reset " + this._commandName + " " + this._adjustmentParameter);
+                    Console.WriteLine("Reset " + this._commandName + " " + this._adjustmentParameter);
+                });
 
             }
             else if (DeviceTouchEventType.Move == deviceTouchEvent.EventType)
             {
                 // Encode both variables to single diff
 
+                /*
                 var bytesX = BitConverter.GetBytes((Int16)deviceTouchEvent.DeltaX);
                 var bytesY = BitConverter.GetBytes((Int16)(-deviceTouchEvent.DeltaY));
 
@@ -71,6 +80,16 @@
                 Tracer.Trace($"Raw deltaX: {deviceTouchEvent.DeltaX}, deltaY: {-deviceTouchEvent.DeltaY}, bytes: {bytes} ");
 
                 this.ExecuteAction(this._adjustmentName, this._adjustmentParameter, BitConverter.ToInt32(bytes, 0));
+                */
+
+                // Send message to sockets:            
+                var allSockets = CommandPostPlugin.allSockets;
+                allSockets.ToList().ForEach(s => {
+                    s.Send("Wheel Move " + this._adjustmentName + " " + this._adjustmentParameter + " " + deviceTouchEvent.DeltaX + " " + deviceTouchEvent.DeltaY);
+                    Console.WriteLine("Reset " + this._commandName + " " + this._adjustmentParameter + " " + deviceTouchEvent.DeltaX + " " + deviceTouchEvent.DeltaY);
+                });
+
+
             }
         }
 
