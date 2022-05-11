@@ -47,10 +47,14 @@
             // Get WebSocket Events:
             //
             this.plugin.ActionValueUpdatedEvents += (sender, e) =>
-            {
+            {                
                 var actionValue = e.ActionValue;
-                this.cachedValues[e.Id] = actionValue;
-                this.ActionImageChanged();
+                var actionID = e.Id;
+
+                if (!String.IsNullOrEmpty(actionID) && !String.IsNullOrEmpty(actionValue)) {
+                    this.cachedValues[e.Id] = actionValue;
+                    this.ActionImageChanged();
+                }
             };
 
             return true;
@@ -86,10 +90,16 @@
             allSockets.ToList().ForEach(socket => socket.Send(jsonString));
         }
 
-        protected override String GetAdjustmentValue(String actionParameter) =>
-           //
-           // Get the value of the adjustment from cache:
-           //
-           this.cachedValues[actionParameter];           
+        protected override String GetAdjustmentValue(String actionParameter)
+        {
+            //
+            // Get the value of the adjustment from cache:
+            //
+            if (this.cachedValues.ContainsKey(actionParameter)) {
+                return this.cachedValues[actionParameter];
+            } else {
+                return "?";
+            }
+        }
     }
 }

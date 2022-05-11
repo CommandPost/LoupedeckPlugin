@@ -59,6 +59,19 @@ namespace Loupedeck.CommandPostPlugin
         public override void Load()
         {
             //
+            // Detect Language Changes:
+            //
+            this.Localization.LanguageChanged += (sender, e) =>
+            {
+                Console.WriteLine("[CP] LANGUAGE CHANGED! " + this.GetLoupedeckLanguageCode());
+            };
+
+            this.PluginActionsChangedRequest += (sender, e) =>
+            {
+                Console.WriteLine("[CP] PluginActionsChangedRequest");
+            };
+
+            //
             // Load CommandPost Icon from the Embedded Resources:
             //
             this.LoadIcons();
@@ -115,7 +128,7 @@ namespace Loupedeck.CommandPostPlugin
                     if (incomingMessage.MessageType == "UpdateDisplay")
                     {
                         //
-                        // Update Display:
+                        // Send Event Notification to Adjustments Class:
                         //
                         var actionValueUpdatedEventArgs = new ActionValueUpdatedEventArgs(incomingMessage.ActionName, incomingMessage.ActionValue);
                         ActionValueUpdatedEvents?.Invoke(this, actionValueUpdatedEventArgs);
