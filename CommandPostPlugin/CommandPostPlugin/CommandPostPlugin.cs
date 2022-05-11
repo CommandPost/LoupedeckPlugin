@@ -1,13 +1,14 @@
 namespace Loupedeck.CommandPostPlugin
 {
-    using System;
+    using System;    
     using System.Linq;
     using System.Text.Json;
     using System.Collections.Generic;
 
     using Loupedeck.CommandPostPlugin.Models.Events;
 
-    using Fleck;    
+    using Fleck;
+    using System.Globalization;
 
     public class WebSocketMessage
     {
@@ -30,6 +31,31 @@ namespace Loupedeck.CommandPostPlugin
         //
         public override Boolean UsesApplicationApiOnly => true;
 
+        //
+        // Get the LoupedeckConfig Language:
+        //
+        public String GetLoupedeckLanguage()
+        {
+            var LoupedeckLanguage = this.Localization.LoupedeckLanguage;
+            return LoupedeckLanguage;
+        }
+
+        //
+        // Get the LoupedeckConfig Language Code:
+        //
+        public String GetLoupedeckLanguageCode()
+        {
+            var LoupedeckLanguage = this.GetLoupedeckLanguage();
+            var cultureInfo = new CultureInfo(LoupedeckLanguage, false);
+            var result = cultureInfo.TwoLetterISOLanguageName;
+            return result;
+        }
+
+        public static String LoupedeckLanguageCode;
+
+        //
+        // On Plugin Load:
+        //
         public override void Load()
         {
             //
@@ -81,7 +107,7 @@ namespace Loupedeck.CommandPostPlugin
                     allSockets.Remove(socket);
                 };
                 socket.OnMessage = message =>
-                {
+                {                    
                     //
                     // WebSocket Message Recieved:
                     //

@@ -1,28 +1,46 @@
 ﻿namespace Loupedeck.CommandPostPlugin
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
     using System.Text.Json;
 
-    class VideoInspectorOpacity : PluginDynamicAdjustment
+    using Loupedeck.CommandPostPlugin.Localisation;
+
+    class CommandPostAdjustmentsFromJSON : PluginDynamicAdjustment
     {
-        public VideoInspectorOpacity() : base("Opacity", "Controls the Opacity Slider in the Final Cut Pro Video Inspector", "FCP: Video Inspector", true)
-        {
-        }
-
         private CommandPostPlugin plugin;
+        Dictionary<String, String> cachedValues;
 
-        //
-        // Cached Screen Value:
-        // 
-        private String cachedValue = "?";
+        static readonly CPLocalisation localisation = new CPLocalisation();
+
+        public CommandPostAdjustmentsFromJSON() : base(true)
+        {         
+        }
 
         protected override Boolean OnLoad()
         {
+            this.cachedValues = new Dictionary<String, String>();
+
             this.plugin = base.Plugin as CommandPostPlugin;
             if (this.plugin is null)
             {
                 return false;
+            }
+
+            //
+            // Create a new Parameter for each Command:
+            //
+            var LanguageCode = this.plugin.GetLoupedeckLanguageCode();
+            foreach (KeyValuePair<String, String> command in localisation.GetAdjustments())
+            {
+                var ActionID = command.Key;
+                var GroupID = command.Value;
+
+                var DisplayName = localisation.GetDisplayName(ActionID, LanguageCode);
+                var GroupName = localisation.GetGroupName(GroupID, LanguageCode);
+
+                this.AddParameter(ActionID, DisplayName, GroupName);
             }
 
             //
@@ -31,7 +49,7 @@
             this.plugin.ActionValueUpdatedEvents += (sender, e) =>
             {
                 var actionValue = e.ActionValue;
-                this.cachedValue = actionValue;
+                this.cachedValues[e.Id] = actionValue;
                 this.ActionImageChanged();
             };
 
@@ -45,9 +63,9 @@
             //            
             var jsonString = JsonSerializer.Serialize(new
             {
-                actionName      = "VideoInspectorOpacity",
-                actionType      = "turn",
-                actionValue     = value,
+                actionName = actionParameter,
+                actionType = "turn",
+                actionValue = value,
             });
             var allSockets = CommandPostPlugin.allSockets;
             allSockets.ToList().ForEach(socket => socket.Send(jsonString));
@@ -60,7 +78,7 @@
             //
             var jsonString = JsonSerializer.Serialize(new
             {
-                actionName = "VideoInspectorOpacity",
+                actionName = actionParameter,
                 actionType = "press",
                 actionValue = "",
             });
@@ -68,12 +86,10 @@
             allSockets.ToList().ForEach(socket => socket.Send(jsonString));
         }
 
-        protected override String GetAdjustmentValue(String actionParameter)
-        {
-            //
-            // Get the value of the adjustment from cache:
-            //
-            return this.cachedValue;            
-        }
+        protected override String GetAdjustmentValue(String actionParameter) =>
+           //
+           // Get the value of the adjustment from cache:
+           //
+           this.cachedValues[actionParameter];           
     }
 }

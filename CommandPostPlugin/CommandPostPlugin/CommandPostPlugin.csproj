@@ -93,10 +93,11 @@
     <Compile Include="CommandPostApplication.cs" />
     <Compile Include="CommandPostPlugin.cs" />
     <Compile Include="WheelTools\WheelToolColorWheelBase.cs" />
-    <Compile Include="Commands\Final Cut Pro\Video Inspector\Opacity.cs" />
-    <Compile Include="Commands\CommandPost\Favourites.cs" />
     <Compile Include="Models\Events\ActionUpdatedEventArgs.cs" />
     <Compile Include="Models\Events\ActionValueUpdatedEventArgs.cs" />
+    <Compile Include="Commands\CommandsFromJSON.cs" />
+    <Compile Include="Localisation.cs" />
+    <Compile Include="Adjustments\AdjustmentsFromJSON.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -107,6 +108,12 @@
     <EmbeddedResource Include="Resources\WheelTools\WheelToolColorWheelBase\WheelToolColorWheelBase.png" />
     <EmbeddedResource Include="Resources\Commands\ToggleSwitchButton\ToggleSwitchButtonOff.png" />
     <EmbeddedResource Include="Resources\Commands\ToggleSwitchButton\ToggleSwitchButtonOn.png" />
+    <EmbeddedResource Include="Localisation\commands.json" />
+    <EmbeddedResource Include="Localisation\groupnames-en.json" />
+    <EmbeddedResource Include="Localisation\displaynames-en.json" />
+    <EmbeddedResource Include="Localisation\displaynames-de.json" />
+    <EmbeddedResource Include="Localisation\groupnames-de.json" />
+    <EmbeddedResource Include="Localisation\adjustments.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -122,11 +129,10 @@
     <Folder Include="Resources\WheelTools\WheelToolColorWheelBase\" />
     <Folder Include="Resources\Commands\" />
     <Folder Include="Resources\Commands\ToggleSwitchButton\" />
-    <Folder Include="Commands\Final Cut Pro\" />
-    <Folder Include="Commands\Final Cut Pro\Video Inspector\" />
-    <Folder Include="Commands\CommandPost\" />
     <Folder Include="Models\" />
     <Folder Include="Models\Events\" />
+    <Folder Include="Localisation\" />
+    <Folder Include="Adjustments\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.3\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.3\build\System.Text.Json.targets')" />
