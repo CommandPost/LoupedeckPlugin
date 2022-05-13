@@ -12,7 +12,7 @@
         private CommandPostPlugin plugin;
         Dictionary<String, String> cachedValues;
 
-        static readonly CPLocalisation localisation = new CPLocalisation();
+        private CPLocalisation localisation;
 
         public CommandPostAdjustmentsFromJSON() : base(true)
         {         
@@ -20,8 +20,14 @@
 
         protected override Boolean OnLoad()
         {
+            //
+            // Setup our display cache:
+            //
             this.cachedValues = new Dictionary<String, String>();
 
+            //
+            // Create a link to the main plugin:
+            //
             this.plugin = base.Plugin as CommandPostPlugin;
             if (this.plugin is null)
             {
@@ -29,16 +35,20 @@
             }
 
             //
-            // Create a new Parameter for each Command:
+            // Load the localisation class:
             //
-            var LanguageCode = this.plugin.GetLoupedeckLanguageCode();
-            foreach (KeyValuePair<String, String> command in localisation.GetAdjustments())
+            this.localisation = new CPLocalisation(this.plugin);
+
+            //
+            // Create a new Parameter for each Command:
+            //            
+            foreach (KeyValuePair<String, String> command in this.localisation.GetAdjustments())
             {
                 var ActionID = command.Key;
                 var GroupID = command.Value;
 
-                var DisplayName = localisation.GetDisplayName(ActionID, LanguageCode);
-                var GroupName = localisation.GetGroupName(GroupID, LanguageCode);
+                var DisplayName = this.localisation.GetDisplayName(ActionID);
+                var GroupName = this.localisation.GetGroupName(GroupID);
 
                 this.AddParameter(ActionID, DisplayName, GroupName);
             }
@@ -95,11 +105,9 @@
             //
             // Get the value of the adjustment from cache:
             //
-            if (this.cachedValues.ContainsKey(actionParameter)) {
-                return this.cachedValues[actionParameter];
-            } else {
-                return "?";
-            }
+            return this.cachedValues.ContainsKey(actionParameter)
+                ? this.cachedValues[actionParameter]
+                : "?";
         }
     }
 }

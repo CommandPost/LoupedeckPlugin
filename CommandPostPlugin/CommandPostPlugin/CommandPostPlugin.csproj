@@ -108,12 +108,18 @@
     <EmbeddedResource Include="Resources\WheelTools\WheelToolColorWheelBase\WheelToolColorWheelBase.png" />
     <EmbeddedResource Include="Resources\Commands\ToggleSwitchButton\ToggleSwitchButtonOff.png" />
     <EmbeddedResource Include="Resources\Commands\ToggleSwitchButton\ToggleSwitchButtonOn.png" />
-    <EmbeddedResource Include="Localisation\commands.json" />
-    <EmbeddedResource Include="Localisation\groupnames-en.json" />
-    <EmbeddedResource Include="Localisation\displaynames-en.json" />
-    <EmbeddedResource Include="Localisation\displaynames-de.json" />
-    <EmbeddedResource Include="Localisation\groupnames-de.json" />
-    <EmbeddedResource Include="Localisation\adjustments.json" />
+    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-de.json" />
+    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-en.json" />
+    <EmbeddedResource Include="Localisation\GroupNames\groupnames-de.json" />
+    <EmbeddedResource Include="Localisation\GroupNames\groupnames-en.json" />
+    <EmbeddedResource Include="Localisation\GroupNames\groupnames-fr.json" />
+    <EmbeddedResource Include="Localisation\GroupNames\groupnames-ja.json" />
+    <EmbeddedResource Include="Localisation\GroupNames\groupnames-ko.json" />
+    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-fr.json" />
+    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-ja.json" />
+    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-ko.json" />
+    <EmbeddedResource Include="Localisation\Adjustments\adjustments.json" />
+    <EmbeddedResource Include="Localisation\Commands\commands.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -133,6 +139,10 @@
     <Folder Include="Models\Events\" />
     <Folder Include="Localisation\" />
     <Folder Include="Adjustments\" />
+    <Folder Include="Localisation\DisplayNames\" />
+    <Folder Include="Localisation\GroupNames\" />
+    <Folder Include="Localisation\Adjustments\" />
+    <Folder Include="Localisation\Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.3\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.3\build\System.Text.Json.targets')" />

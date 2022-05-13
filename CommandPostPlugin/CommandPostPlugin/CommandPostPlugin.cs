@@ -59,6 +59,11 @@ namespace Loupedeck.CommandPostPlugin
         public override void Load()
         {
             //
+            // Work out what are the supported languages:
+            //
+            Console.WriteLine("[CP] Supported Languages: " + this.Localization.SupportedLanguages);
+
+            //
             // Detect Language Changes:
             //
             this.Localization.LanguageChanged += (sender, e) =>
@@ -70,6 +75,13 @@ namespace Loupedeck.CommandPostPlugin
             {
                 Console.WriteLine("[CP] PluginActionsChangedRequest");
             };
+
+            //
+            // Set the status to "Warning" because we can:
+            //
+            this.OnPluginStatusChanged(Loupedeck.PluginStatus.Warning,
+                "This plugin is still in an early beta testing phase.",
+                "https://commandpost.io");
 
             //
             // Load CommandPost Icon from the Embedded Resources:
@@ -118,6 +130,15 @@ namespace Loupedeck.CommandPostPlugin
                     // WebSocket Closed:
                     //
                     allSockets.Remove(socket);
+                };
+                socket.OnError = ex =>
+                {
+                    //
+                    // An error has occurred:
+                    //
+                    this.OnPluginStatusChanged(Loupedeck.PluginStatus.Warning,
+                        "Something went wrong on the websocket server: " + ex.ToString(),
+                        "https://help.commandpost.io/control-surfaces/loupdeck");
                 };
                 socket.OnMessage = message =>
                 {                    

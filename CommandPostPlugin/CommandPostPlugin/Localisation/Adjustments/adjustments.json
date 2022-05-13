@@ -1,0 +1,15 @@
+{
+  "CommandPostFavouriteTurn01": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn02": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn03": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn04": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn05": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn06": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn07": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn08": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn09": "CommandPostFavouritesTurn",
+  "CommandPostFavouriteTurn10": "CommandPostFavouritesTurn",  
+  "Video Inspector.Compositing.Opacity": "Video Inspector",
+  "Video Inspector.Transform.Position X": "Video Inspector",
+  "Video Inspector.Transform.Position Y": "Video Inspector"
+}
