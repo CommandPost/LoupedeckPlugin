@@ -8,10 +8,15 @@
 
     public class CPLocalisation
     {
+        private readonly String[] SupportedLanguageCodes = { "de", "en", "fr", "ja", "ko" };
+
         private Dictionary<String, String> Commands;
         private Dictionary<String, String> Adjustments;
+        private Dictionary<String, Dictionary<String, String>> GeneralStrings;
         private Dictionary<String, Dictionary<String, String>> DisplayNames;
         private Dictionary<String, Dictionary<String, String>> GroupNames;
+        
+
 
         private CommandPostPlugin plugin;
 
@@ -38,6 +43,7 @@
             //
             this.Commands = new Dictionary<String, String>();
             this.Adjustments = new Dictionary<String, String>();
+            this.GeneralStrings = new Dictionary<String, Dictionary<String, String>>();
             this.DisplayNames = new Dictionary<String, Dictionary<String, String>>();
             this.GroupNames = new Dictionary<String, Dictionary<String, String>>();
 
@@ -50,20 +56,26 @@
             //
             // Load DisplayNames JSON files:
             //
-            this.DisplayNames["de"] = GetJSONData("de", "displaynames");
-            this.DisplayNames["en"] = GetJSONData("en", "displaynames");
-            this.DisplayNames["fr"] = GetJSONData("fr", "displaynames");
-            this.DisplayNames["ja"] = GetJSONData("ja", "displaynames");
-            this.DisplayNames["ko"] = GetJSONData("ko", "displaynames");
+            foreach (var Code in this.SupportedLanguageCodes)
+            {
+                this.DisplayNames[Code] = GetJSONData(Code, "displaynames");
+            }
 
             //
             // Load GroupNames JSON files:
             //
-            this.GroupNames["de"] = GetJSONData("de", "groupnames");
-            this.GroupNames["en"] = GetJSONData("en", "groupnames");
-            this.GroupNames["fr"] = GetJSONData("fr", "groupnames");
-            this.GroupNames["ja"] = GetJSONData("ja", "groupnames");
-            this.GroupNames["ko"] = GetJSONData("ko", "groupnames");
+            foreach (var Code in this.SupportedLanguageCodes)
+            {
+                this.GroupNames[Code] = GetJSONData(Code, "groupnames");
+            }
+
+            //
+            // Load General Strings from JSON files:
+            //
+            foreach (var Code in this.SupportedLanguageCodes)
+            {
+                this.GeneralStrings[Code] = GetJSONData(Code, "general");
+            }
         }
 
         // 
@@ -118,5 +130,16 @@
         // Get Adjustments:
         // 
         public Dictionary<String, String> GetAdjustments() => this.Adjustments;
+
+        //
+        // Get General String:
+        //
+        public String GetGeneralString(String GeneralStringsID)
+        {
+            var LanguageCode = this.GetCurrentLanguageCode();
+            return this.GeneralStrings[LanguageCode].ContainsKey(GeneralStringsID)
+                    ? this.GeneralStrings[LanguageCode][GeneralStringsID]
+                    : this.GeneralStrings["en"][GeneralStringsID];
+        }
     }
 }

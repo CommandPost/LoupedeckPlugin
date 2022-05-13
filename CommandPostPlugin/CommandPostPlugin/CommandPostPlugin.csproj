@@ -120,6 +120,11 @@
     <EmbeddedResource Include="Localisation\DisplayNames\displaynames-ko.json" />
     <EmbeddedResource Include="Localisation\Adjustments\adjustments.json" />
     <EmbeddedResource Include="Localisation\Commands\commands.json" />
+    <EmbeddedResource Include="Localisation\General\general-de.json" />
+    <EmbeddedResource Include="Localisation\General\general-en.json" />
+    <EmbeddedResource Include="Localisation\General\general-fr.json" />
+    <EmbeddedResource Include="Localisation\General\general-ja.json" />
+    <EmbeddedResource Include="Localisation\General\general-ko.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

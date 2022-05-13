@@ -7,6 +7,8 @@ namespace Loupedeck.CommandPostPlugin
 
     using Loupedeck.CommandPostPlugin.Models.Events;
 
+    using Loupedeck.CommandPostPlugin.Localisation;
+
     using Fleck;
     using System.Globalization;
 
@@ -19,6 +21,10 @@ namespace Loupedeck.CommandPostPlugin
 
     public class CommandPostPlugin : Plugin
     {
+        private CPLocalisation localisation;
+
+        public static String LoupedeckLanguageCode;
+
         public event EventHandler<ActionValueUpdatedEventArgs> ActionValueUpdatedEvents;
 
         //
@@ -51,13 +57,16 @@ namespace Loupedeck.CommandPostPlugin
             return result;
         }
 
-        public static String LoupedeckLanguageCode;
-
         //
         // On Plugin Load:
         //
         public override void Load()
         {
+            //
+            // Load the localisation class:
+            //
+            this.localisation = new CPLocalisation(this);
+
             //
             // Work out what are the supported languages:
             //
@@ -77,13 +86,6 @@ namespace Loupedeck.CommandPostPlugin
             };
 
             //
-            // Set the status to "Warning" because we can:
-            //
-            this.OnPluginStatusChanged(Loupedeck.PluginStatus.Warning,
-                "This plugin is still in an early beta testing phase.",
-                "https://commandpost.io");
-
-            //
             // Load CommandPost Icon from the Embedded Resources:
             //
             this.LoadIcons();
@@ -92,6 +94,42 @@ namespace Loupedeck.CommandPostPlugin
             // Start WebSocket Server:
             //
             this.SetupSocketServer();
+
+            //
+            // Update the Plugin Status:
+            //
+            this.UpdatePluginStatus();
+        }
+
+        //
+        // Update the CommandPost Plugin Status:
+        //
+        public void UpdatePluginStatus()
+        {            
+            var CommandPostBundleID = "org.latenitefilms.CommandPost";
+            var CommandPostPID = this.NativeMethods.GetProcessId(CommandPostBundleID);
+            if (CommandPostPID == -1)
+            {
+                //
+                // CommmandPost is not running:
+                //
+                this.OnPluginStatusChanged(Loupedeck.PluginStatus.Error,
+                this.localisation.GetGeneralString("CommandPostNotRunningError"),
+                this.localisation.GetGeneralString("CommandPostURL"));
+            } else if (allSockets.Count == 0) {
+                //
+                // CommandPost is not connected:
+                //
+                this.OnPluginStatusChanged(Loupedeck.PluginStatus.Error,
+                this.localisation.GetGeneralString("CommandPostWebSocketError"),
+                this.localisation.GetGeneralString("CommandPostURL"));
+            }
+            else {
+                //
+                // Everything is Normal:
+                //
+                this.OnPluginStatusChanged(Loupedeck.PluginStatus.Normal, null, null);
+            }
         }
 
         ///
@@ -123,6 +161,7 @@ namespace Loupedeck.CommandPostPlugin
                     // WebSocket Open:
                     //
                     allSockets.Add(socket);
+                    this.UpdatePluginStatus();
                 };
                 socket.OnClose = () =>
                 {
@@ -130,6 +169,7 @@ namespace Loupedeck.CommandPostPlugin
                     // WebSocket Closed:
                     //
                     allSockets.Remove(socket);
+                    this.UpdatePluginStatus();
                 };
                 socket.OnError = ex =>
                 {
@@ -137,8 +177,8 @@ namespace Loupedeck.CommandPostPlugin
                     // An error has occurred:
                     //
                     this.OnPluginStatusChanged(Loupedeck.PluginStatus.Warning,
-                        "Something went wrong on the websocket server: " + ex.ToString(),
-                        "https://help.commandpost.io/control-surfaces/loupdeck");
+                        this.localisation.GetGeneralString("CommandPostWebSocketSpecificError") + ex.ToString(),
+                        this.localisation.GetGeneralString("CommandPostURL"));
                 };
                 socket.OnMessage = message =>
                 {                    
