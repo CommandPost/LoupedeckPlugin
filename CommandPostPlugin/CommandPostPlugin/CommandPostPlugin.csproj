@@ -98,6 +98,8 @@
     <Compile Include="Commands\CommandsFromJSON.cs" />
     <Compile Include="Localisation.cs" />
     <Compile Include="Adjustments\AdjustmentsFromJSON.cs" />
+    <Compile Include="Models\Events\NewCommandsEventArgs.cs" />
+    <Compile Include="Models\Events\NewCommandsValueEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -130,6 +132,7 @@
     <None Include="App.config" />
     <None Include="Resources\WheelTools\WheelToolShuttle\WheelToolShuttle.png" />
     <None Include="packages.config" />
+    <None Include="Commands\VideoEffects.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

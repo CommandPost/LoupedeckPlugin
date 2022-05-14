@@ -1,14 +1,14 @@
-﻿using System;
-
-namespace Loupedeck.CommandPostPlugin.Models.Events
+﻿namespace Loupedeck.CommandPostPlugin.Models.Events
 {
+    using System;
+
     public abstract class ActionUpdatedEventArgs : EventArgs
     {
-        public string Id { get; }
+        public String Id { get; }
 
-        protected ActionUpdatedEventArgs(string id)
+        protected ActionUpdatedEventArgs(String id)
         {
-            Id = id;
+            this.Id = id;
         }
     }
 }

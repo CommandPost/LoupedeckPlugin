@@ -1,5 +1,18 @@
 {
-  "CommandPostFavouritesPress": "CP: Favourites (Press)",
-  "CommandPostFavouritesTurn": "CP: Favourites (Turn)",
-  "Video Inspector": "FCP: Video Inspector"
+  "CommandPostFavouritesPress":               "CP: お気に入り (プレス)",
+  "CommandPostFavouritesTurn":                "CP: お気に入り (振り向く)",
+
+  "Video Inspector":                          "FCP: ビデオインスペクター",
+
+  "FCPCommandSet.Organization":               "FCP: コマンド - 整理",
+  "FCPCommandSet.Marking":                    "FCP: コマンド - マーク",
+  "FCPCommandSet.Application":                "FCP: コマンド - アプリケーション",
+  "FCPCommandSet.Share":                      "FCP: コマンド - 共有",
+  "FCPCommandSet.General":                    "FCP: コマンド - 一般",
+  "FCPCommandSet.Windows":                    "FCP: コマンド - ウインドウ",
+  "FCPCommandSet.View":                       "FCP: コマンド - 表示",
+  "FCPCommandSet.Effects":                    "FCP: コマンド - エフェクト",
+  "FCPCommandSet.Playback/Navigation":        "FCP: コマンド - 再生/ナビゲーション",
+  "FCPCommandSet.Editing":                    "FCP: コマンド - 編集",
+  "FCPCommandSet.Tools":                      "FCP: コマンド - ツール"
 }

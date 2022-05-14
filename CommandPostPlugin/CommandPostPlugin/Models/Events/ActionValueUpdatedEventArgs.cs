@@ -1,13 +1,12 @@
 ﻿namespace Loupedeck.CommandPostPlugin.Models.Events
 {
+    using System;
+
     public class ActionValueUpdatedEventArgs : ActionUpdatedEventArgs
     {
-        public string ActionValue { get; set; }
+        public String ActionValue { get; set; }
 
-        public ActionValueUpdatedEventArgs(string id, string actionValue)
-            : base(id)
-        {
-            ActionValue = actionValue;
-        }
+        public ActionValueUpdatedEventArgs(String id, String actionValue)
+            : base(id) => this.ActionValue = actionValue;
     }
 }

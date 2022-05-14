@@ -11,21 +11,40 @@ namespace Loupedeck.CommandPostPlugin
 
     using Fleck;
     using System.Globalization;
-
+    
+    //
+    // WebSocket Message Class:
+    //
     public class WebSocketMessage
     {
         public String MessageType { get; set; }
         public String ActionName { get; set; }
         public String ActionValue { get; set; }
+
+        public String CommandName { get; set; }
+        public String CommandType { get; set; }
+        public String CommandCategory { get; set; }
+        public String CommandTheme { get; set; }
     }
 
     public class CommandPostPlugin : Plugin
     {
+        //
+        // Private:
+        //
         private CPLocalisation localisation;
+        private readonly String WebSocketServerPort = "54475";
 
+        //
+        // Public:
+        //
         public static String LoupedeckLanguageCode;
 
+        //
+        // Event Handlers:
+        //
         public event EventHandler<ActionValueUpdatedEventArgs> ActionValueUpdatedEvents;
+        public event EventHandler<NewCommandsEventArgs> NewCommandsEvents;
 
         //
         // Does not require an application to be in the foreground or any application to be running locally at all:
@@ -152,7 +171,7 @@ namespace Loupedeck.CommandPostPlugin
         {
             allSockets = new List<IWebSocketConnection>();
 
-            commandpostWebSocketServer = new WebSocketServer("ws://0.0.0.0:54475");
+            commandpostWebSocketServer = new WebSocketServer("ws://0.0.0.0:" + this.WebSocketServerPort);
             commandpostWebSocketServer.Start(socket =>
             {
                 socket.OnOpen = () =>
@@ -186,23 +205,39 @@ namespace Loupedeck.CommandPostPlugin
                     // WebSocket Message Recieved:
                     //
                     WebSocketMessage incomingMessage = JsonSerializer.Deserialize<WebSocketMessage>(message);
-                    if (incomingMessage.MessageType == "UpdateDisplay")
+                    switch (incomingMessage.MessageType)
                     {
-                        //
-                        // Send Event Notification to Adjustments Class:
-                        //
-                        var actionValueUpdatedEventArgs = new ActionValueUpdatedEventArgs(incomingMessage.ActionName, incomingMessage.ActionValue);
-                        ActionValueUpdatedEvents?.Invoke(this, actionValueUpdatedEventArgs);
-                    } else if (incomingMessage.MessageType == "Ping") {
-                        //
-                        // Reply to Ping:
-                        //
-                        var jsonString = JsonSerializer.Serialize(new
-                        {
-                            actionName = "pong",                            
-                        });                        
-                        allSockets.ToList().ForEach(s => s.Send(jsonString));
-                    }
+                        case "UpdateDisplay":
+                            //
+                            // Send Event Notification to Adjustments Class:
+                            //
+                            var actionValueUpdatedEventArgs = new ActionValueUpdatedEventArgs(incomingMessage.ActionName, incomingMessage.ActionValue);
+                            ActionValueUpdatedEvents?.Invoke(this, actionValueUpdatedEventArgs);
+                            break;
+                        case "UpdateCommands":
+                            //
+                            // Send Event Notification to classes that has generated commands:
+                            //
+                            var newCommandsValueEventArgs = new NewCommandsValueEventArgs(incomingMessage.ActionName, incomingMessage.CommandName, incomingMessage.CommandType, incomingMessage.CommandCategory, incomingMessage.CommandTheme);
+                            NewCommandsEvents?.Invoke(this, newCommandsValueEventArgs);
+                            break;
+                        case "Ping":                    
+                            //
+                            // Reply to Ping:
+                            //
+                            var jsonString = JsonSerializer.Serialize(new
+                            {
+                                actionName = "pong",                            
+                            });                        
+                            allSockets.ToList().ForEach(s => s.Send(jsonString));
+                            break;
+                        default:
+                            //
+                            // Unknown MessageType:
+                            //
+                            Console.WriteLine("[CP] Unknown WebSocket MessageType Received: " + incomingMessage.MessageType);
+                            break;
+                    };
                 };
             });
         }

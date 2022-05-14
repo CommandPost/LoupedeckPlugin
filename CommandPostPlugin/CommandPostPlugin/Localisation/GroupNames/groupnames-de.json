@@ -1,5 +1,18 @@
 {
-  "CommandPostFavouritesPress": "CP: Favourites (Press)",
-  "CommandPostFavouritesTurn": "CP: Favourites (Turn)",
-  "Video Inspector": "FCP: Video Inspector"
+  "CommandPostFavouritesPress":               "CP: Favoriten (Presse)",
+  "CommandPostFavouritesTurn":                "CP: Favoriten (Runde)",
+
+  "Video Inspector":                          "FCP: Video-Inspektor",
+
+  "FCPCommandSet.Organization":               "FCP: Abkürzungen - Organisation",
+  "FCPCommandSet.Marking":                    "FCP: Abkürzungen - Markieren",
+  "FCPCommandSet.Application":                "FCP: Abkürzungen - Programm",
+  "FCPCommandSet.Share":                      "FCP: Abkürzungen - Teilen",
+  "FCPCommandSet.General":                    "FCP: Abkürzungen - Allgemein",
+  "FCPCommandSet.Windows":                    "FCP: Abkürzungen - Fenster",
+  "FCPCommandSet.View":                       "FCP: Abkürzungen - Darstellung",
+  "FCPCommandSet.Effects":                    "FCP: Abkürzungen - Effekte",
+  "FCPCommandSet.Playback/Navigation":        "FCP: Abkürzungen - Wiedergabe/Navigation",
+  "FCPCommandSet.Editing":                    "FCP: Abkürzungen - Bearbeitung",
+  "FCPCommandSet.Tools":                      "FCP: Abkürzungen - Werkzeuge"
 }

@@ -1,5 +1,18 @@
 {
-  "CommandPostFavouritesPress": "CP: Favourites (Press)",
-  "CommandPostFavouritesTurn": "CP: Favourites (Turn)",
-  "Video Inspector": "FCP: Video Inspector"
+  "CommandPostFavouritesPress":               "CP: Favourites (Press)",
+  "CommandPostFavouritesTurn":                "CP: Favourites (Turn)",
+
+  "Video Inspector":                          "FCP: Video Inspector",
+
+  "FCPCommandSet.Application":                "FCP: Shortcuts - Application",
+  "FCPCommandSet.Editing":                    "FCP: Shortcuts - Editing",
+  "FCPCommandSet.Effects":                    "FCP: Shortcuts - Effects",
+  "FCPCommandSet.General":                    "FCP: Shortcuts - General",
+  "FCPCommandSet.Marking":                    "FCP: Shortcuts - Marking",
+  "FCPCommandSet.Organization":               "FCP: Shortcuts - Organization",
+  "FCPCommandSet.Playback/Navigation":        "FCP: Shortcuts - Playback/Navigation",
+  "FCPCommandSet.Share":                      "FCP: Shortcuts - Share",
+  "FCPCommandSet.Tools":                      "FCP: Shortcuts - Tools",
+  "FCPCommandSet.View":                       "FCP: Shortcuts - View",
+  "FCPCommandSet.Windows":                    "FCP: Shortcuts - Windows"
 }
