@@ -92,7 +92,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CommandPostApplication.cs" />
     <Compile Include="CommandPostPlugin.cs" />
-    <Compile Include="WheelTools\WheelToolColorWheelBase.cs" />
     <Compile Include="Models\Events\ActionUpdatedEventArgs.cs" />
     <Compile Include="Models\Events\ActionValueUpdatedEventArgs.cs" />
     <Compile Include="Commands\CommandsFromJSON.cs" />
@@ -100,6 +99,7 @@
     <Compile Include="Adjustments\AdjustmentsFromJSON.cs" />
     <Compile Include="Models\Events\NewCommandsEventArgs.cs" />
     <Compile Include="Models\Events\NewCommandsValueEventArgs.cs" />
+    <Compile Include="WheelTools\ColorWheels.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -108,8 +108,6 @@
     <EmbeddedResource Include="Resources\Icon\icon-32.png" />
     <EmbeddedResource Include="Resources\Icon\icon-48.png" />
     <EmbeddedResource Include="Resources\WheelTools\WheelToolColorWheelBase\WheelToolColorWheelBase.png" />
-    <EmbeddedResource Include="Resources\Commands\ToggleSwitchButton\ToggleSwitchButtonOff.png" />
-    <EmbeddedResource Include="Resources\Commands\ToggleSwitchButton\ToggleSwitchButtonOn.png" />
     <EmbeddedResource Include="Localisation\DisplayNames\displaynames-de.json" />
     <EmbeddedResource Include="Localisation\DisplayNames\displaynames-en.json" />
     <EmbeddedResource Include="Localisation\GroupNames\groupnames-de.json" />
@@ -141,8 +139,6 @@
     <Folder Include="Resources\WheelTools\" />
     <Folder Include="Resources\WheelTools\WheelToolShuttle\" />
     <Folder Include="Resources\WheelTools\WheelToolColorWheelBase\" />
-    <Folder Include="Resources\Commands\" />
-    <Folder Include="Resources\Commands\ToggleSwitchButton\" />
     <Folder Include="Models\" />
     <Folder Include="Models\Events\" />
     <Folder Include="Localisation\" />

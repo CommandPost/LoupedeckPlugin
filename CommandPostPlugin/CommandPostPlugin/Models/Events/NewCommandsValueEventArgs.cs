@@ -1,4 +1,7 @@
-﻿namespace Loupedeck.CommandPostPlugin.Models.Events
+﻿//
+// TODO: Ignore this for now - it's a work in progress.
+//
+namespace Loupedeck.CommandPostPlugin.Models.Events
 {
     using System;
 

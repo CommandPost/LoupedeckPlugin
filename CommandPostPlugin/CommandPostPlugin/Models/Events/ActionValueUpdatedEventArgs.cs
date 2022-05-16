@@ -2,6 +2,9 @@
 {
     using System;
 
+    /// <summary>
+    /// Action Updated Event Arguments.
+    /// </summary>
     public class ActionValueUpdatedEventArgs : ActionUpdatedEventArgs
     {
         public String ActionValue { get; set; }

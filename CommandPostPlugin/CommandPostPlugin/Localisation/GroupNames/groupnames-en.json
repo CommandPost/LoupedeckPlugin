@@ -14,5 +14,16 @@
   "FCPCommandSet.Share":                      "FCP: Shortcuts - Share",
   "FCPCommandSet.Tools":                      "FCP: Shortcuts - Tools",
   "FCPCommandSet.View":                       "FCP: Shortcuts - View",
-  "FCPCommandSet.Windows":                    "FCP: Shortcuts - Windows"
+  "FCPCommandSet.Windows":                    "FCP: Shortcuts - Windows",
+
+  "FCPMenu.Final Cut Pro":                    "FCP: Menubar - Final Cut Pro",
+  "FCPMenu.File":                             "FCP: Menubar - File",
+  "FCPMenu.Edit":                             "FCP: Menubar - Edit",
+  "FCPMenu.Trim":                             "FCP: Menubar - Trim",
+  "FCPMenu.Mark":                             "FCP: Menubar - Mark",
+  "FCPMenu.Clip":                             "FCP: Menubar - Clip",
+  "FCPMenu.Modify":                           "FCP: Menubar - Modify",
+  "FCPMenu.View":                             "FCP: Menubar - View",
+  "FCPMenu.Window":                           "FCP: Menubar - Window",
+  "FCPMenu.Help":                             "FCP: Menubar - Help"  
 }

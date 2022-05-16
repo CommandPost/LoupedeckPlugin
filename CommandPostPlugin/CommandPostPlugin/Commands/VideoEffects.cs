@@ -1,4 +1,7 @@
-﻿namespace Loupedeck.CommandPostPlugin
+﻿//
+// TODO: Ignore this for now - it's a work in progress.
+//
+namespace Loupedeck.CommandPostPlugin
 {
     using System;
     using System.Collections.Generic;

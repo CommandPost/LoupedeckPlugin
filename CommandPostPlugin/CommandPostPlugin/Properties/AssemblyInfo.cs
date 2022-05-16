@@ -1,5 +1,5 @@
 using System.Reflection;
-using System.Runtime.CompilerServices;
+//using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
@@ -7,12 +7,12 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 [assembly: AssemblyTitle("CommandPost")]
 [assembly: AssemblyDescription("Allows you to trigger CommandPost Actions within Loupedeck")]
-[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyConfiguration("")] // Leave as "" for now
 [assembly: AssemblyCompany("CommandPost Developers")]
 [assembly: AssemblyProduct("CommandPost")]
-[assembly: AssemblyCopyright("Copyright © 2022 Chris Hocking. All rights reserved.")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyCopyright("Copyright © 2022 LateNite Films Pty Ltd. All rights reserved.")]
+[assembly: AssemblyTrademark("LateNite Films is a registered Trademark.")]
+[assembly: AssemblyCulture("")] // Should always be ""
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
