@@ -3,8 +3,8 @@
     using System;
     using System.Text.Json;
 
-    using Loupedeck.CommandPostPlugin.Localisation;
     using Loupedeck.Devices.Loupedeck2Devices;
+    using Loupedeck.CommandPostPlugin.Localisation;
 
     /// <summary>
     /// Color Wheel Adjustments for the Loupedeck CT Touch Wheel.

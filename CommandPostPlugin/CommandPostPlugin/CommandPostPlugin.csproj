@@ -98,6 +98,7 @@
     <Compile Include="Models\Events\NewCommandsValueEventArgs.cs" />
     <Compile Include="WheelTools\ColorWheels.cs" />
     <Compile Include="Commands\CommandsFromWebSocket.cs" />
+    <Compile Include="WheelTools\Shuttle.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
