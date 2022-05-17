@@ -107,6 +107,7 @@
                 {
                     actionName = this.TemplateDisplayName,
                     actionType = "doubleTap",
+                    functionPressed = deviceTouchEvent.IsFnPressed(),
                 });
                 this.plugin.SendWebSocketMessage(jsonString);
             }
