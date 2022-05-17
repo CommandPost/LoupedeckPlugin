@@ -1,4 +1,10 @@
 {
+  "Video Inspector.Compositing.Opacity":                    "Opacity",
+  "Video Inspector.Transform.Position X":                   "Position X",
+  "Video Inspector.Transform.Position Y":                   "Position Y",
+
+  "Timeline.Playhead":                                      "Playhead",
+
   "FCP Global":                                             "FCP Global",
   "FCP Shadows":                                            "FCP Shadows",
   "FCP Midtones":                                           "FCP Midtones",
@@ -105,10 +111,6 @@
   "CommandPostFavouriteTurn48":                             "Favourite 48",
   "CommandPostFavouriteTurn49":                             "Favourite 49",
   "CommandPostFavouriteTurn50":                             "Favourite 50",
-
-  "Video Inspector.Compositing.Opacity":                    "Opacity",
-  "Video Inspector.Transform.Position X":                   "Position X",
-  "Video Inspector.Transform.Position Y":                   "Position Y",
 
   "Command Set Shortcuts.Effects.Retime: Slow 25%": "Retime: Slow 25%",
   "Command Set Shortcuts.Tools.Cinematic Tool": "Cinematic Tool",

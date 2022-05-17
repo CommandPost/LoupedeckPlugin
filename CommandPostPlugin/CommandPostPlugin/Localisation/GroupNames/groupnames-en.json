@@ -2,7 +2,9 @@
   "CommandPostFavouritesPress":               "CP: Favourites (Press)",
   "CommandPostFavouritesTurn":                "CP: Favourites (Turn)",
 
-  "Video Inspector":                          "FCP: Video Inspector",
+  "FCP.Video Inspector":                      "FCP: Video Inspector",
+
+  "FCP.Timeline":                             "FCP: Timeline",
 
   "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
   "FCPPlugin.generator":                      "FCP: Generators",

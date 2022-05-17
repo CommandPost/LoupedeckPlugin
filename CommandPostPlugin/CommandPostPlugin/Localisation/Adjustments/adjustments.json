@@ -50,7 +50,9 @@
   "CommandPostFavouriteTurn49":                     "CommandPostFavouritesTurn",
   "CommandPostFavouriteTurn50":                     "CommandPostFavouritesTurn",
 
-  "Video Inspector.Compositing.Opacity":            "Video Inspector",
-  "Video Inspector.Transform.Position X":           "Video Inspector",
-  "Video Inspector.Transform.Position Y":           "Video Inspector"
+  "Video Inspector.Compositing.Opacity":            "FCP.Video Inspector",
+  "Video Inspector.Transform.Position X":           "FCP.Video Inspector",
+  "Video Inspector.Transform.Position Y":           "FCP.Video Inspector",
+
+  "Timeline.Playhead":                              "FCP.Timeline"
 }
