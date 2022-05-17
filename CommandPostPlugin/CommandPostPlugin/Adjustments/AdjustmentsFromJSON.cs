@@ -88,14 +88,18 @@
         /// <param name="value">The parameter value as an Int32.</param>
         protected override void ApplyAdjustment(String actionParameter, Int32 value)
         {
-            // Send WebSocket message when the action is triggered via knob turn:            
-            var jsonString = JsonSerializer.Serialize(new
+            // Make sure the actionParameter is valid:
+            if (!actionParameter.IsNullOrEmpty())
             {
-                actionName = actionParameter,
-                actionType = "turn",
-                actionValue = value,
-            });
-            this.plugin.SendWebSocketMessage(jsonString);            
+                // Send WebSocket message when the action is triggered via knob turn:            
+                var jsonString = JsonSerializer.Serialize(new
+                {
+                    actionName = actionParameter,
+                    actionType = "turn",
+                    actionValue = value,
+                });
+                this.plugin.SendWebSocketMessage(jsonString);
+            }
         }
 
         /// <summary>
@@ -103,24 +107,31 @@
         /// </summary>
         /// <param name="actionParameter">The action parameter as a string.</param>
         protected override void RunCommand(String actionParameter)
-        {            
-            // Send WebSocket message when the action is triggered via knob press:           
-            var jsonString = JsonSerializer.Serialize(new
+        {
+            // Make sure the actionParameter is valid:
+            if (!actionParameter.IsNullOrEmpty())
             {
-                actionName = actionParameter,
-                actionType = "press",
-                actionValue = "",
-            });
-            this.plugin.SendWebSocketMessage(jsonString);
+                // Send WebSocket message when the action is triggered via knob press:           
+                var jsonString = JsonSerializer.Serialize(new
+                {
+                    actionName = actionParameter,
+                    actionType = "press",
+                    actionValue = "",
+                });
+                this.plugin.SendWebSocketMessage(jsonString);
+            }
         }
 
         /// <summary>
         /// Get the Adjustment Value.
         /// </summary>
         /// <param name="actionParameter">The action parameter as a string.</param>
-        /// <returns>A string value that you want to display on the physical hardware screen or "?" if a value isn't already cached.</returns>
+        /// <returns>A string value that you want to display on the physical hardware screen or "?" if a value isn't already cached. If the actionParameter is null or empty it'll return null.</returns>
         protected override String GetAdjustmentValue(String actionParameter)
         {
+            // Abort if the actionParameter is null or empty:
+            if (actionParameter.IsNullOrEmpty()) { return null;  }
+
             // Get the value of the adjustment from cache:         
             return this.cachedValues.ContainsKey(actionParameter)
                 ? this.cachedValues[actionParameter]

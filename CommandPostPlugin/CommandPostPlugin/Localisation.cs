@@ -53,7 +53,7 @@
             this.plugin = thePlugin;
 
             // Write the Current Language Code to Console for Debug Purposes:
-            Console.WriteLine("[CP] Current Language Code: " + this.GetCurrentLanguageCode());
+            // Console.WriteLine("[CP] Current Language Code: " + this.GetCurrentLanguageCode());
 
             // Read JSON Files:
             this.ReadJSONFiles();

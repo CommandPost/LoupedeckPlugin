@@ -17,11 +17,6 @@ namespace Loupedeck.CommandPostPlugin
         public String MessageType { get; set; }
         public String ActionName { get; set; }
         public String ActionValue { get; set; }
-
-        public String CommandName { get; set; }
-        public String CommandType { get; set; }
-        public String CommandCategory { get; set; }
-        public String CommandTheme { get; set; }
     }
 
     /// <summary>
@@ -41,7 +36,7 @@ namespace Loupedeck.CommandPostPlugin
 
         // Event Handlers:
         public event EventHandler<ActionValueUpdatedEventArgs> ActionValueUpdatedEvents;
-        public event EventHandler<NewCommandsEventArgs> NewCommandsEvents;
+        public event EventHandler<NewCommandsValueEventArgs> NewCommandsEvents;
 
         /// <summary>
         /// Does not require an application to be in the foreground or any application to be running locally at all.
@@ -83,27 +78,8 @@ namespace Loupedeck.CommandPostPlugin
             // Load the localisation class:
             this.localisation = new CPLocalisation(this);
 
-            // Work out what are the supported languages:
-            Console.WriteLine("[CP] Supported Languages:");
-            Console.WriteLine(this.Localization.SupportedLanguages);
-
-            // Detect Language Changes:
-            this.Localization.LanguageChanged += (sender, e) =>
-            {
-                // TODO: Currently this doesn't ever trigger?!?
-                Console.WriteLine("[CP] LANGUAGE CHANGED! " + this.GetLoupedeckLanguageCode());
-            };
-
-            // Detect Plugin Actions Change Requests:
-            this.PluginActionsChangedRequest += (sender, e) =>
-            {
-                // TODO: Currently this doesn't ever trigger?!?
-                Console.WriteLine("[CP] PluginActionsChangedRequest");
-            };
-
             // Load CommandPost Icon from the Embedded Resources:
             this.LoadIcons();
-
 
             // Start WebSocket Server:
             this.SetupWebSocketServer();
@@ -181,6 +157,13 @@ namespace Loupedeck.CommandPostPlugin
                     // WebSocket Open:                    
                     allSockets.Add(socket);
                     this.UpdatePluginStatus();
+
+                    // Request a list of Commands:
+                    var jsonString = JsonSerializer.Serialize(new
+                    {
+                        actionName = "RequestCommands"
+                    });                    
+                    this.SendWebSocketMessage(jsonString);
                 };
                 socket.OnClose = () =>
                 {
@@ -208,7 +191,7 @@ namespace Loupedeck.CommandPostPlugin
                             break;
                         case "UpdateCommands":
                             // Send Event Notification to classes that has generated commands:
-                            var newCommandsValueEventArgs = new NewCommandsValueEventArgs(incomingMessage.ActionName, incomingMessage.CommandName, incomingMessage.CommandType, incomingMessage.CommandCategory, incomingMessage.CommandTheme);
+                            var newCommandsValueEventArgs = new NewCommandsValueEventArgs(incomingMessage.ActionName, incomingMessage.ActionValue);
                             NewCommandsEvents?.Invoke(this, newCommandsValueEventArgs);
                             break;
                         case "Ping":
@@ -217,7 +200,7 @@ namespace Loupedeck.CommandPostPlugin
                             {
                                 actionName = "pong",
                             });
-                            allSockets.ToList().ForEach(s => s.Send(jsonString));
+                            this.SendWebSocketMessage(jsonString);                            
                             break;
                         default:
                             // Unknown MessageType:
@@ -234,8 +217,12 @@ namespace Loupedeck.CommandPostPlugin
         /// <param name="message">The message to send as a string.</param>
         public void SendWebSocketMessage(String message)
         {
-            var allSockets = CommandPostPlugin.allSockets;
-            allSockets.ToList().ForEach(socket => socket.Send(message));
+            if (message.IsNullOrEmpty()) {
+                Console.WriteLine("[CP] ERROR: Tried to send an null or empty WebSocket message.");
+            } else {
+                var allSockets = CommandPostPlugin.allSockets;
+                allSockets.ToList().ForEach(socket => socket.Send(message));
+            }            
         }
 
         /// <summary>

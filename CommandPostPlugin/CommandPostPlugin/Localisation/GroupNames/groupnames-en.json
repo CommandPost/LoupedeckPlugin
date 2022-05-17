@@ -4,6 +4,12 @@
 
   "Video Inspector":                          "FCP: Video Inspector",
 
+  "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
+  "FCPPlugin.generator":                      "FCP: Generators",
+  "FCPPlugin.title":                          "FCP: Titles",
+  "FCPPlugin.transition":                     "FCP: Transitions",
+  "FCPPlugin.videoEffect":                    "FCP: Video Effects",
+
   "FCPCommandSet.Application":                "FCP: Shortcuts - Application",
   "FCPCommandSet.Editing":                    "FCP: Shortcuts - Editing",
   "FCPCommandSet.Effects":                    "FCP: Shortcuts - Effects",

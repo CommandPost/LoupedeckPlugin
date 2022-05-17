@@ -1,6 +1,6 @@
 {
-  "CommandPostURL": "https://commandpost.io",
-  "CommandPostNotRunningError": "CommandPost is not running.",
-  "CommandPostWebSocketError": "CommandPost is not connected.",
-  "CommandPostWebSocketSpecificError": "WebSocket Server Error: "
+  "CommandPostURL":                           "https://commandpost.io",
+  "CommandPostNotRunningError":               "CommandPost is not running.",
+  "CommandPostWebSocketError":                "CommandPost is not connected.",
+  "CommandPostWebSocketSpecificError":        "WebSocket Server Error: "
 }
