@@ -98,7 +98,6 @@
     <Compile Include="Models\Events\NewCommandsValueEventArgs.cs" />
     <Compile Include="WheelTools\ColorWheels.cs" />
     <Compile Include="Commands\CommandsFromWebSocket.cs" />
-    <Compile Include="WheelTools\Shuttle.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -127,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Resources\WheelTools\WheelToolShuttle\WheelToolShuttle.png" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -135,7 +133,6 @@
     <Folder Include="Resources\Icon\" />
     <Folder Include="Commands\" />
     <Folder Include="Resources\WheelTools\" />
-    <Folder Include="Resources\WheelTools\WheelToolShuttle\" />
     <Folder Include="Resources\WheelTools\WheelToolColorWheelBase\" />
     <Folder Include="Models\" />
     <Folder Include="Models\Events\" />
