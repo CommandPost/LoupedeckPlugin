@@ -36,6 +36,7 @@ Once installed, you can access the CommandPost actions from the CommandPost icon
 
 - Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions.
 - Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions. You'll need to restart the LoupedeckConfig application for UI to update.
+- Despite the UI saying "if you enable the Loupedeck Plugin, CommandPost's native Loupedeck support will be disabled" - we don't actually currently check for this. This will be fixed in a future beta.
 
 ## What is CommandPost?
 
