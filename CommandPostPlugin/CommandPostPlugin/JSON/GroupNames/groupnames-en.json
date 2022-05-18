@@ -24,14 +24,14 @@
   "FCPCommandSet.View":                       "FCP: Shortcuts - View",
   "FCPCommandSet.Windows":                    "FCP: Shortcuts - Windows",
 
-  "FCPMenu.Final Cut Pro":                    "FCP: Menubar - Final Cut Pro",
-  "FCPMenu.File":                             "FCP: Menubar - File",
-  "FCPMenu.Edit":                             "FCP: Menubar - Edit",
-  "FCPMenu.Trim":                             "FCP: Menubar - Trim",
-  "FCPMenu.Mark":                             "FCP: Menubar - Mark",
-  "FCPMenu.Clip":                             "FCP: Menubar - Clip",
-  "FCPMenu.Modify":                           "FCP: Menubar - Modify",
-  "FCPMenu.View":                             "FCP: Menubar - View",
-  "FCPMenu.Window":                           "FCP: Menubar - Window",
-  "FCPMenu.Help":                             "FCP: Menubar - Help"  
+  "FCPMenu.Final Cut Pro":                    "FCP: Menu - Final Cut Pro",
+  "FCPMenu.File":                             "FCP: Menu - File",
+  "FCPMenu.Edit":                             "FCP: Menu - Edit",
+  "FCPMenu.Trim":                             "FCP: Menu - Trim",
+  "FCPMenu.Mark":                             "FCP: Menu - Mark",
+  "FCPMenu.Clip":                             "FCP: Menu - Clip",
+  "FCPMenu.Modify":                           "FCP: Menu - Modify",
+  "FCPMenu.View":                             "FCP: Menu - View",
+  "FCPMenu.Window":                           "FCP: Menu - Window",
+  "FCPMenu.Help":                             "FCP: Menu - Help"  
 }
