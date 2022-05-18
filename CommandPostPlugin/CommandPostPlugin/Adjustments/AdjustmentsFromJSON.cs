@@ -1,8 +1,7 @@
 ﻿namespace Loupedeck.CommandPostPlugin
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
+    using System.Collections.Generic;    
     using System.Text.Json;
 
     using Loupedeck.CommandPostPlugin.Localisation;
@@ -26,20 +25,13 @@
         /// A dictionary of cached values for updating the physical Loupedeck displays
         /// </summary>
         private Dictionary<String, String> cachedValues;
-
-        /// <summary>
-        /// 
-        /// </summary>
-        private PluginActionParameter[] _pluginActionParameters;
-
+        
         /// <summary>
         /// A Loupedeck Adjustment Plugin that's populated from data on a JSON file.
         /// </summary>
         public CommandPostAdjustmentsFromJSON() : base(true)
         {
         }
-
-        public PluginActionParameter[] GetPluginActionParameters() => this._pluginActionParameters ?? new PluginActionParameter[0];
 
         /// <summary>
         /// Triggered when the PluginDynamicAdjustment loads.
@@ -61,9 +53,6 @@
             // Setup our display cache:
             this.cachedValues = new Dictionary<String, String>();
 
-            this._pluginActionParameters = null;
-            var pluginActionParameters = new List<PluginActionParameter>();
-
             // Create a new Parameter for each Command:
             foreach (KeyValuePair<String, String> command in this.localisation.GetAdjustments())
             {
@@ -73,13 +62,8 @@
                 var DisplayName = this.localisation.GetDisplayName(ActionID);
                 var GroupName = this.localisation.GetGroupName(GroupID);
 
-                //this.AddParameter(ActionID, DisplayName, GroupName);
-
-                pluginActionParameters.Add(new PluginActionParameter(ActionID, DisplayName, GroupName));
-            }
-            this._pluginActionParameters = pluginActionParameters.OrderBy(p => $"{p.GroupName}_{p.DisplayName}").ToArray();
-            
-            this.ParametersChanged();
+                this.AddParameter(ActionID, DisplayName, GroupName);
+            }            
 
             // Get WebSocket Events:
             this.plugin.ActionValueUpdatedEvents += (sender, e) =>
