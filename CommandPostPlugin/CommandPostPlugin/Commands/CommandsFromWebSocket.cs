@@ -107,13 +107,17 @@
         /// <param name="imageSize">The image size as a PluginImageSize.</param>
         /// <returns>The display name or null if the actionParameter is null or empty.</returns>
         protected override String GetCommandDisplayName(String actionParameter, PluginImageSize imageSize) {
-            if (actionParameter.IsNullOrEmpty()) {
-                return null;
-            }                          
+
+            // Abort is the actionParameter is null or empty:
+            if (actionParameter.IsNullOrEmpty()) { return null; }
+
+            // Get Display Name from JSON:
             if (this.Commands.TryGetValue(actionParameter, out var value))
             {
                 return value;
             }
+
+            // Something went wrong - return null:
             return null;   
         }
     }

@@ -20,8 +20,8 @@
         /// A link back to the localisation class.
         /// </summary>
         private CPLocalisation localisation;
-
-        public CommandPostCommandsFromJSON() : base()
+        
+        public CommandPostCommandsFromJSON() : base(DeviceType.All)
         {
         }
 

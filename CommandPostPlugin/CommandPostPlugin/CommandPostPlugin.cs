@@ -75,6 +75,37 @@ namespace Loupedeck.CommandPostPlugin
         /// </summary>
         public override void Load()
         {
+            //Console.WriteLine("[CP] Setting language to de-DE");
+            //this.Localization.SetCurrentLanguage("de-DE");
+
+            // Set the Language to the Language of the LoupedeckConfig app:
+            //this.Localization.SetCurrentLanguage(LocalizationEngine.DefaultLanguage);
+
+            this.Localization.SetCurrentLanguage(this.Localization.LoupedeckLanguage);
+            
+            var supportedLanguages = this.Localization.SupportedLanguages;
+            foreach (var supportedLanguage in supportedLanguages)
+            {
+                Console.WriteLine("[CP] Supported Language: " + supportedLanguage);
+            }
+
+            Console.WriteLine("[CP] Current Language: " + this.Localization.CurrentLanguage);
+
+
+            // Detect Language Changes:
+            this.Localization.LanguageChanged += (sender, e) =>
+            {
+                // TODO: Currently this doesn't ever trigger?!?
+                Console.WriteLine("[CP] LANGUAGE CHANGED! " + this.GetLoupedeckLanguageCode());
+            };
+
+            // Detect Plugin Actions Change Requests:
+            this.PluginActionsChangedRequest += (sender, e) =>
+            {
+                // TODO: Currently this doesn't ever trigger?!?
+                Console.WriteLine("[CP] PluginActionsChangedRequest");
+            };
+
             // Load the localisation class:
             this.localisation = new CPLocalisation(this);
 

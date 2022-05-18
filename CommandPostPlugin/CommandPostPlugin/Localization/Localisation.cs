@@ -124,6 +124,16 @@
         public String GetCurrentLanguageCode() {
             var CurrentLanguageCode = this.plugin.GetLoupedeckLanguageCode();            
             return CurrentLanguageCode;
+
+            //var CurrentLanguageCode = this.plugin.Localization.CurrentLanguage;
+
+            //Console.WriteLine("[CP] Current Language Code: " + CurrentLanguageCode);
+
+            //var twoCharacterLanguageCode = CurrentLanguageCode.Substring(0, 2);
+
+            //Console.WriteLine("[CP] Current Language Code (Two Characters): " + twoCharacterLanguageCode);
+          
+            //return twoCharacterLanguageCode;
         }
 
         /// <summary>

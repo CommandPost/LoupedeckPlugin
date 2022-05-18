@@ -1,0 +1,38 @@
+{
+  "CommandPostFavouritesPress":               "CP: Favoriten (Presse)",
+  "CommandPostFavouritesTurn":                "CP: Favoriten (Runde)",
+
+  "FCP.Video Inspector":                      "FCP: Video-Inspektor",
+
+  "FCP.Timeline":                             "FCP: Zeitleiste",
+
+  "FCPPlugin.audioEffect":                    "FCP: Audioeffekte",
+  "FCPPlugin.generator":                      "FCP: Generatoren",
+  "FCPPlugin.title":                          "FCP: Titel",
+  "FCPPlugin.transition":                     "FCP: Übergänge",
+  "FCPPlugin.videoEffect":                    "FCP: Videoeffekte",
+
+  "FCPCommandSet.Application":                "FCP: Abkürzungen - Programm",
+  "FCPCommandSet.Editing":                    "FCP: Abkürzungen - Bearbeitung",
+  "FCPCommandSet.Effects":                    "FCP: Abkürzungen - Effekte",
+  "FCPCommandSet.General":                    "FCP: Abkürzungen - Allgemein",
+  "FCPCommandSet.Marking":                    "FCP: Abkürzungen - Markieren",
+  "FCPCommandSet.Organization":               "FCP: Abkürzungen - Organisation",
+  "FCPCommandSet.Playback/Navigation":        "FCP: Abkürzungen - Wiedergabe/Navigation",
+  "FCPCommandSet.Share":                      "FCP: Abkürzungen - Teilen",
+  "FCPCommandSet.View":                       "FCP: Abkürzungen - Darstellung",
+  "FCPCommandSet.Windows":                    "FCP: Abkürzungen - Fenster",
+  
+  "FCPCommandSet.Tools":                      "FCP: Abkürzungen - Werkzeuge",
+
+  "FCPMenu.Final Cut Pro":                    "FCP: Menüleiste - Final Cut Pro",
+  "FCPMenu.File":                             "FCP: Menüleiste - Ablage",
+  "FCPMenu.Edit":                             "FCP: Menüleiste - Bearbeiten",
+  "FCPMenu.Trim":                             "FCP: Menüleiste - Trimmen",
+  "FCPMenu.Mark":                             "FCP: Menüleiste - Markieren",
+  "FCPMenu.Clip":                             "FCP: Menüleiste - Clip",
+  "FCPMenu.Modify":                           "FCP: Menüleiste - Ändern",
+  "FCPMenu.View":                             "FCP: Menüleiste - Darstellung",
+  "FCPMenu.Window":                           "FCP: Menüleiste - Fenster",
+  "FCPMenu.Help":                             "FCP: Menüleiste - Hilfe"  
+}

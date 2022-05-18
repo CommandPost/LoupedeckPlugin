@@ -137,5 +137,21 @@
                 ? this.cachedValues[actionParameter]
                 : "?";
         }
+
+        /// <summary>
+        /// Get Adjustment Display Name.
+        /// </summary>
+        /// <param name="actionParameter">The action parameter as a string.</param>
+        /// <param name="imageSize">The image size as a PluginImageSize.</param>
+        /// <returns></returns>
+        protected override String GetAdjustmentDisplayName(String actionParameter, PluginImageSize imageSize)
+        {
+            // Abort is the actionParameter is null or empty:
+            if (actionParameter.IsNullOrEmpty()) { return null; }
+
+            // Get Display Name from JSON:
+            var DisplayName = this.localisation.GetDisplayName(actionParameter);
+            return DisplayName;            
+        }
     }
 }

@@ -32,6 +32,19 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp -f "/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/CommandPostPlugin/bin/Release/CommandPostPlugin.dll" "/Users/chrishocking/Documents/GitHub/CommandPost/src/plugins/core/loupedeckplugin/plugin/CommandPostPlugin/bin/mac/CommandPostPlugin.dll"</command>
+          <workingdir></workingdir>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>cp -f "/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/CommandPostPlugin/bin/Release/CommandPostPlugin.dll" "/Users/chrishocking/.local/share/Loupedeck/Plugins/CommandPostPlugin/bin/mac/CommandPostPlugin.dll"</command>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PluginApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -92,12 +105,12 @@
     <Compile Include="Models\Events\ActionUpdatedEventArgs.cs" />
     <Compile Include="Models\Events\ActionValueUpdatedEventArgs.cs" />
     <Compile Include="Commands\CommandsFromJSON.cs" />
-    <Compile Include="Localisation.cs" />
     <Compile Include="Adjustments\AdjustmentsFromJSON.cs" />
     <Compile Include="Models\Events\NewCommandsEventArgs.cs" />
     <Compile Include="Models\Events\NewCommandsValueEventArgs.cs" />
     <Compile Include="WheelTools\ColorWheels.cs" />
     <Compile Include="Commands\CommandsFromWebSocket.cs" />
+    <Compile Include="Localization\Localisation.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -106,23 +119,27 @@
     <EmbeddedResource Include="Resources\Icon\icon-32.png" />
     <EmbeddedResource Include="Resources\Icon\icon-48.png" />
     <EmbeddedResource Include="Resources\WheelTools\WheelToolColorWheelBase\WheelToolColorWheelBase.png" />
-    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-de.json" />
-    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-en.json" />
-    <EmbeddedResource Include="Localisation\GroupNames\groupnames-de.json" />
-    <EmbeddedResource Include="Localisation\GroupNames\groupnames-en.json" />
-    <EmbeddedResource Include="Localisation\GroupNames\groupnames-fr.json" />
-    <EmbeddedResource Include="Localisation\GroupNames\groupnames-ja.json" />
-    <EmbeddedResource Include="Localisation\GroupNames\groupnames-ko.json" />
-    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-fr.json" />
-    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-ja.json" />
-    <EmbeddedResource Include="Localisation\DisplayNames\displaynames-ko.json" />
-    <EmbeddedResource Include="Localisation\Adjustments\adjustments.json" />
-    <EmbeddedResource Include="Localisation\Commands\commands.json" />
-    <EmbeddedResource Include="Localisation\General\general-de.json" />
-    <EmbeddedResource Include="Localisation\General\general-en.json" />
-    <EmbeddedResource Include="Localisation\General\general-fr.json" />
-    <EmbeddedResource Include="Localisation\General\general-ja.json" />
-    <EmbeddedResource Include="Localisation\General\general-ko.json" />
+    <EmbeddedResource Include="JSON\DisplayNames\displaynames-de.json" />
+    <EmbeddedResource Include="JSON\DisplayNames\displaynames-en.json" />
+    <EmbeddedResource Include="JSON\GroupNames\groupnames-de.json" />
+    <EmbeddedResource Include="JSON\GroupNames\groupnames-en.json" />
+    <EmbeddedResource Include="JSON\GroupNames\groupnames-fr.json" />
+    <EmbeddedResource Include="JSON\GroupNames\groupnames-ja.json" />
+    <EmbeddedResource Include="JSON\GroupNames\groupnames-ko.json" />
+    <EmbeddedResource Include="JSON\DisplayNames\displaynames-fr.json" />
+    <EmbeddedResource Include="JSON\DisplayNames\displaynames-ja.json" />
+    <EmbeddedResource Include="JSON\DisplayNames\displaynames-ko.json" />
+    <EmbeddedResource Include="JSON\Adjustments\adjustments.json" />
+    <EmbeddedResource Include="JSON\Commands\commands.json" />
+    <EmbeddedResource Include="JSON\General\general-de.json" />
+    <EmbeddedResource Include="JSON\General\general-en.json" />
+    <EmbeddedResource Include="JSON\General\general-fr.json" />
+    <EmbeddedResource Include="JSON\General\general-ja.json" />
+    <EmbeddedResource Include="JSON\General\general-ko.json" />
+    <EmbeddedResource Include="Localization\CommandPostPlugin_de-DE.xliff" />
+    <EmbeddedResource Include="Localization\CommandPostPlugin_fr-FR.xliff" />
+    <EmbeddedResource Include="Localization\CommandPostPlugin_ja-JA.xliff" />
+    <EmbeddedResource Include="Localization\CommandPostPlugin_ko-KO.xliff" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -136,12 +153,13 @@
     <Folder Include="Resources\WheelTools\WheelToolColorWheelBase\" />
     <Folder Include="Models\" />
     <Folder Include="Models\Events\" />
-    <Folder Include="Localisation\" />
+    <Folder Include="JSON\" />
     <Folder Include="Adjustments\" />
-    <Folder Include="Localisation\DisplayNames\" />
-    <Folder Include="Localisation\GroupNames\" />
-    <Folder Include="Localisation\Adjustments\" />
-    <Folder Include="Localisation\Commands\" />
+    <Folder Include="JSON\DisplayNames\" />
+    <Folder Include="JSON\GroupNames\" />
+    <Folder Include="JSON\Adjustments\" />
+    <Folder Include="JSON\Commands\" />
+    <Folder Include="Localization\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\System.Text.Json.6.0.4\build\System.Text.Json.targets" Condition="Exists('packages\System.Text.Json.6.0.4\build\System.Text.Json.targets')" />
