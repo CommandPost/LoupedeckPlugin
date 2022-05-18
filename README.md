@@ -12,9 +12,13 @@ Once installed you can then trigger a variety of CommandPost actions directly wi
 
 This plugin will eventually be bundled within CommandPost, so you should never have to download it directly from this repository - as we'll include a compiled version within CommandPost.
 
-## Installing the Loupedeck Plugin:
+## Installing the Loupedeck Plugin Beta Releases:
 
 You can download the latest beta release of CommandPost with the Loupedeck Plugin [here](https://github.com/CommandPost/LoupedeckPlugin/releases).
+
+During this beta testing phase, we strongly recommend completely uninstalling CommandPost prior to testing a new beta release using the Uninstall tool in the DMG download:
+
+![CommandPost Menubar](Documentation/Images/04-uninstall.png)
 
 You can find general information on how to install CommandPost [here](https://help.commandpost.io/getting-started/installation).
 
@@ -34,9 +38,8 @@ Once installed, you can access the CommandPost actions from the CommandPost icon
 
 ## Known Issues:
 
-- Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions.
-- Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions. You'll need to restart the LoupedeckConfig application for UI to update.
-- Despite the UI saying "if you enable the Loupedeck Plugin, CommandPost's native Loupedeck support will be disabled" - we don't actually currently check for this. This will be fixed in a future beta.
+- Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow.
+- Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update.
 
 ## What is CommandPost?
 
