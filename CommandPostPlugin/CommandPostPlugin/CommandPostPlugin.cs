@@ -1,15 +1,17 @@
 namespace Loupedeck.CommandPostPlugin
 {
     using Fleck;
+
     using Loupedeck.CommandPostPlugin.Localisation;
     using Loupedeck.CommandPostPlugin.Models.Events;
+
+    using System;
     using System.Collections.Generic;
     using System.Globalization;
     using System.Linq;
     using System.Text.Json;
-    using System;
-    using System.Threading;
     using System.Threading.Tasks;
+    using System.Threading;    
 
     /// <summary>
     /// Defines a WebSocket Message.
@@ -39,6 +41,7 @@ namespace Loupedeck.CommandPostPlugin
         // Event Handlers:
         public event EventHandler<ActionValueUpdatedEventArgs> ActionValueUpdatedEvents;
         public event EventHandler<NewCommandsValueEventArgs> NewCommandsEvents;
+        public event EventHandler<LanguageChangedValueEventArgs> LanguageChangedEvents;
 
         /// <summary>
         /// Does not require an application to be in the foreground or any application to be running locally at all.
@@ -102,7 +105,7 @@ namespace Loupedeck.CommandPostPlugin
             // Update the Plugin Status:
             this.UpdatePluginStatus();
 
-            // Check every 10 seconds for language changes:
+            // Check every second for language changes:
             this.PollForLanguageChanges();
         }
 
@@ -122,12 +125,17 @@ namespace Loupedeck.CommandPostPlugin
                     var PlugInLanguage = this.Localization.CurrentLanguage;
                     if (LoupedeckLanguage != PlugInLanguage)
                     {
+                        // Change the language of the plugin:
                         Console.WriteLine($"[CP] Language has changed from '{PlugInLanguage}' to '{LoupedeckLanguage}'.");
                         this.Localization.SetCurrentLanguage(this.Localization.LoupedeckLanguage);
 
+                        // Trigger Event:
+                        var languageChangedValueEventArgs = new LanguageChangedValueEventArgs("LanguageChanged", LoupedeckLanguage);
+                        LanguageChangedEvents?.Invoke(this, languageChangedValueEventArgs);
+
                         // Write the current language for debugging purposes:
                         Console.WriteLine("[CP] Current Language: " + this.Localization.CurrentLanguage);
-                    } 
+                    }
 
                     Thread.Sleep(delay);
                     if (token.IsCancellationRequested)

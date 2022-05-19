@@ -125,6 +125,8 @@
     <Compile Include="WheelTools\ColorWheels.cs" />
     <Compile Include="Commands\CommandsFromWebSocket.cs" />
     <Compile Include="Localization\Localisation.cs" />
+    <Compile Include="Models\Events\LanguageChangedEventArgs.cs" />
+    <Compile Include="Models\Events\LanguageChangedValueEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />

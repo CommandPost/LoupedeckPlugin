@@ -78,6 +78,30 @@
                 }
             };
 
+            // Detect Language Changes:            
+            this.plugin.LanguageChangedEvents += (sender, e) =>
+            {
+                Console.WriteLine("[CP] Language has changed in CommandPostAdjustmentsFromJSON: " + e.NewLanguage);
+
+                //
+                // NOTE: I tried to trigger RemoveAllParameters with the thought that once removed, I could add them again,
+                //       but alas, it doesn't do anything.
+                //
+                //this.RemoveAllParameters();
+
+                // NOTE: This also doesn't work:
+                /*
+                var parameters = this.GetParameters();
+                foreach (PluginActionParameter p in parameters)
+                {                    
+                    var ActionID = p.Name;
+                    Console.WriteLine("[CP] Current Parameter: " + ActionID);
+                    p.ResetDisplayName = this.localisation.GetDisplayName(ActionID);
+                }                
+                this.ParametersChanged();
+                */
+            };
+
             return true;
         }
 
