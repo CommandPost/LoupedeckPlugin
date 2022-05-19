@@ -164,6 +164,16 @@ You can modify these files on GitHub [here](https://github.com/CommandPost/Loupe
 - Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow.
 - Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions in the LoupedeckConfig interface. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update. However, most actions will update on the hardware itself.
 
+## CommandPost's Workflow Extension:
+
+The Loupedeck Plugin uses CommandPost's Workflow Extension to control the timeline playhead in Final Cut Pro.
+
+The Workflow Extension will load automatically when you trigger an action that requires it.
+
+You can learn more about the Workflow Extension [here](https://help.commandpost.io/workflow-extension/workflowextension).
+
+![Workflow Extension](Documentation/Images/07-workflow-extension.png)
+
 ## What is CommandPost?
 
 CommandPost is a **free** and [open source](https://github.com/CommandPost/CommandPost/blob/develop/LICENSE.md) macOS application that bridges between control surfaces and software that doesn’t support them natively, such as Apple’s [Final Cut Pro](https://www.apple.com/final-cut-pro/) and Adobe’s [After Effects](https://www.adobe.com/products/aftereffects.html).
