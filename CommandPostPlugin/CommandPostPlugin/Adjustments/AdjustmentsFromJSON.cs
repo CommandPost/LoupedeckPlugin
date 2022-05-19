@@ -133,9 +133,12 @@
             if (actionParameter.IsNullOrEmpty()) { return null;  }
 
             // Get the value of the adjustment from cache:         
-            return this.cachedValues.ContainsKey(actionParameter)
-                ? this.cachedValues[actionParameter]
-                : "?";
+            if (this.cachedValues.TryGetValue(actionParameter, out var value)) {
+                return value;
+            }
+
+            // If there's no value, return null:
+            return null;
         }
 
         /// <summary>
@@ -152,6 +155,23 @@
             // Get Display Name from JSON:
             var DisplayName = this.localisation.GetDisplayName(actionParameter);
             return DisplayName;            
+        }
+
+        /// <summary>
+        /// Get the Command Display Name.
+        /// </summary>
+        /// <param name="actionParameter">The action parameter as a string.</param>
+        /// <param name="imageSize">The image size as a PluginImageSize.</param>
+        /// <returns>The Display Name as a string or null if the actionParameter is null or empty.</returns>
+        protected override String GetCommandDisplayName(String actionParameter, PluginImageSize imageSize)
+        {
+            // Abort is the actionParameter is null or empty:
+            if (actionParameter.IsNullOrEmpty())
+            { return null; }
+
+            // Get Display Name from JSON:
+            var DisplayName = this.localisation.GetDisplayName(actionParameter);
+            return DisplayName;
         }
     }
 }

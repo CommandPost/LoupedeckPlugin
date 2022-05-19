@@ -64,13 +64,17 @@ You can now apply "Favourite 01" to whatever knob or button you want to trigger 
 
 To keep the CommandPost Loupedeck Plugin as simple and as friendly as possible, we use basic JSON files to store all localisation information.
 
-Currently the CommandPost Loupedeck Plugin defaults to using whatever language the LoupedeckConfig application is set to.
+The CommandPost Loupedeck Plugin defaults to using whatever language the LoupedeckConfig application is set to.
 
-However, currently if you change the LoupedeckConfig application language, you need to restart the Loupedeck Service and LoupedeckConfig application for the CommandPost Plugin to update the language. We hope to fix this in a future beta.
+Currently if you change the LoupedeckConfig application language, you need to restart the Loupedeck Service and LoupedeckConfig application for the language to be updated in the user interface. We hope to fix this in a future beta.
+
+However, if you change the language in the LoupedeckConfig application, some of the actions will actually update on the hardware displays.
 
 English is regarded as the "hero" language, so if a translation doesn't exist in a language, it will fallback to English by default.
 
-There's a couple of different files:
+The CommandPost Loupedeck Plugin does contain a bunch of `.xliff` files (found [here](https://github.com/CommandPost/LoupedeckPlugin/tree/main/CommandPostPlugin/CommandPostPlugin/Localization)), but these are essentially just empty dummy files used to tell the Loupedeck API that we support these languages.
+
+Here's an explanation of the JSON files we currently use:
 
 ### adjustments.json
 
@@ -158,7 +162,7 @@ You can modify these files on GitHub [here](https://github.com/CommandPost/Loupe
 ## Known Issues:
 
 - Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow.
-- Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update.
+- Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions in the LoupedeckConfig interface. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update. However, most actions will update on the hardware itself.
 
 ## What is CommandPost?
 

@@ -1,4 +1,75 @@
 {
+  "Audio Inspector.Volume":                         "FCP: Audio Inspector",
+
+  "Video Inspector.Compositing.Opacity":            "FCP.Video Inspector",
+  "Video Inspector.Transform.Position X":           "FCP.Video Inspector",
+  "Video Inspector.Transform.Position Y":           "FCP.Video Inspector",
+  "Video Inspector.Transform.Rotation":             "FCP: Video Inspector",
+  "Video Inspector.Transform.Scale (All)":          "FCP: Video Inspector",
+  "Video Inspector.Transform.Scale X":              "FCP: Video Inspector",
+  "Video Inspector.Transform.Scale Y":              "FCP: Video Inspector",
+  "Video Inspector.Transform.Anchor X":             "FCP: Video Inspector",
+  "Video Inspector.Transform.Anchor Y":             "FCP: Video Inspector",
+  "Video Inspector.Crop.Crop Left":                 "FCP: Video Inspector",
+  "Video Inspector.Crop.Crop Right":                "FCP: Video Inspector",
+  "Video Inspector.Crop.Crop Bottom":               "FCP: Video Inspector",
+
+  "Timeline.Playhead":                              "FCP.Timeline",
+  "Timeline.PlayheadX2":                            "FCP.Timeline",
+  "Timeline.PlayheadX4":                            "FCP.Timeline",
+  "Timeline.PlayheadX8":                            "FCP.Timeline",
+  "Timeline.PlayheadX12":                           "FCP.Timeline",
+  "Timeline.PlayheadX16":                           "FCP.Timeline",
+  "Timeline.PlayheadX20":                           "FCP.Timeline",
+
+  "Timeline.Zoom":                                  "FCP.Timeline",
+  "Timeline.Clip Height":                           "FCP.Timeline",
+
+  "Color Wheels.Master.Vertical":                   "FCP.Color Wheels",
+  "Color Wheels.Master.Horizontal":                 "FCP.Color Wheels",
+  "Color Wheels.Shadows.Vertical":                  "FCP.Color Wheels",
+  "Color Wheels.Shadows.Horizontal":                "FCP.Color Wheels",
+  "Color Wheels.Midtones.Vertical":                 "FCP.Color Wheels",
+  "Color Wheels.Midtones.Horizontal":               "FCP.Color Wheels",
+  "Color Wheels.Highlights.Vertical":               "FCP.Color Wheels",
+  "Color Wheels.Highlights.Horizontal":             "FCP.Color Wheels",
+
+  "Color Wheels.Master.Saturation":                 "FCP.Color Wheels",
+  "Color Wheels.Master.Brightness":                 "FCP.Color Wheels",    
+  "Color Wheels.Shadows.Saturation":                "FCP.Color Wheels",
+  "Color Wheels.Shadows.Brightness":                "FCP.Color Wheels",    
+  "Color Wheels.Midtones.Saturation":               "FCP.Color Wheels",
+  "Color Wheels.Midtones.Brightness":               "FCP.Color Wheels",    
+  "Color Wheels.Highlights.Saturation":             "FCP.Color Wheels",
+  "Color Wheels.Highlights.Brightness":             "FCP.Color Wheels",
+
+  "Color Wheels.Temperature":                       "FCP.Color Wheels",
+  "Color Wheels.Tint":                              "FCP.Color Wheels",
+  "Color Wheels.Hue":                               "FCP.Color Wheels",
+  "Color Wheels.Mix":                               "FCP.Color Wheels",
+
+  "Color Wheels.Contrast":                          "FCP.Color Wheels",
+
+  "Color Board.Color Master (Angle)":               "FCP.Color Board",
+  "Color Board.Color Shadows (Angle)":              "FCP.Color Board",
+  "Color Board.Color Midtones (Angle)":             "FCP.Color Board",
+  "Color Board.Color Highlights (Angle)":           "FCP.Color Board",
+
+  "Color Board.Color Master (Percentage)":          "FCP.Color Board",
+  "Color Board.Color Shadows (Percentage)":         "FCP.Color Board",
+  "Color Board.Color Midtones (Percentage)":        "FCP.Color Board",
+  "Color Board.Color Highlights (Percentage)":      "FCP.Color Board",
+
+  "Color Board.Saturation Master":                  "FCP.Color Board",
+  "Color Board.Saturation Shadows":                 "FCP.Color Board",
+  "Color Board.Saturation Midtones":                "FCP.Color Board",
+  "Color Board.Saturation Highlights":              "FCP.Color Board",
+
+  "Color Board.Exposure Master":                    "FCP.Color Board",
+  "Color Board.Exposure Shadows":                   "FCP.Color Board",
+  "Color Board.Exposure Midtones":                  "FCP.Color Board",
+  "Color Board.Exposure Highlights":                "FCP.Color Board",
+
   "CommandPostFavourite01":                         "CommandPostFavourites",
   "CommandPostFavourite02":                         "CommandPostFavourites",
   "CommandPostFavourite03":                         "CommandPostFavourites",
@@ -48,11 +119,5 @@
   "CommandPostFavourite47":                         "CommandPostFavourites",
   "CommandPostFavourite48":                         "CommandPostFavourites",
   "CommandPostFavourite49":                         "CommandPostFavourites",
-  "CommandPostFavourite50":                         "CommandPostFavourites",
-
-  "Video Inspector.Compositing.Opacity":            "FCP.Video Inspector",
-  "Video Inspector.Transform.Position X":           "FCP.Video Inspector",
-  "Video Inspector.Transform.Position Y":           "FCP.Video Inspector",
-
-  "Timeline.Playhead":                              "FCP.Timeline"
+  "CommandPostFavourite50":                         "CommandPostFavourites"
 }

@@ -98,10 +98,6 @@
 
             // Get Display Name from JSON:
             var DisplayName = this.localisation.GetDisplayName(actionParameter);
-            if (DisplayName.IsNullOrEmpty())
-            {
-                Console.WriteLine("[CP] ERROR: GetCommandDisplayName is null or empty: " + actionParameter);
-            }
             return DisplayName;
         }
     }

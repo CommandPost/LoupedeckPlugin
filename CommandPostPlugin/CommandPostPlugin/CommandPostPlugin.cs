@@ -107,11 +107,11 @@ namespace Loupedeck.CommandPostPlugin
         }
 
         /// <summary>
-        /// Check every 10 seconds for language changes to LoupedeckConfig.
+        /// Check every second for language changes to LoupedeckConfig.
         /// </summary>
         public void PollForLanguageChanges()
         {
-            var delay = 10;
+            var delay = 1;
             var cancellationTokenSource = new CancellationTokenSource();
             var token = cancellationTokenSource.Token;
             var listener = Task.Factory.StartNew(() =>

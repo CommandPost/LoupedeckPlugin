@@ -122,18 +122,18 @@
         /// </summary>
         /// <returns>The language code as a two character string.</returns>
         public String GetCurrentLanguageCode() {
-            var CurrentLanguageCode = this.plugin.GetLoupedeckLanguageCode();            
-            return CurrentLanguageCode;
+            //var CurrentLanguageCode = this.plugin.GetLoupedeckLanguageCode();            
+            //return CurrentLanguageCode;
 
-            //var CurrentLanguageCode = this.plugin.Localization.CurrentLanguage;
+            var CurrentLanguageCode = this.plugin.Localization.CurrentLanguage;
 
             //Console.WriteLine("[CP] Current Language Code: " + CurrentLanguageCode);
 
-            //var twoCharacterLanguageCode = CurrentLanguageCode.Substring(0, 2);
+            var twoCharacterLanguageCode = CurrentLanguageCode.Substring(0, 2);
 
             //Console.WriteLine("[CP] Current Language Code (Two Characters): " + twoCharacterLanguageCode);
           
-            //return twoCharacterLanguageCode;
+            return twoCharacterLanguageCode;
         }
 
         /// <summary>
@@ -164,16 +164,16 @@
             var LanguageCode = this.GetCurrentLanguageCode();
 
             // First Attempt: Try the current language:
-            if (this.DisplayNames[LanguageCode].ContainsKey(ActionID))
+            if (this.DisplayNames[LanguageCode].TryGetValue(ActionID, out var ActionIDResult))
             {
-                return this.DisplayNames[LanguageCode][ActionID];
+                return ActionIDResult;
             }
 
             // Second Attempt: Try English:
-            if (this.DisplayNames["en"].ContainsKey(ActionID))
+            if (this.DisplayNames["en"].TryGetValue(ActionID, out var EnglishResult))
             {
-                return this.DisplayNames["en"][ActionID];
-            }
+                return EnglishResult;
+            }            
 
             // Third Attempt: Return the ID and write an error message to Console:
             Console.WriteLine("[CP] ERROR: Missing DisplayName with ActionID: '" + ActionID + "'.");
@@ -191,15 +191,15 @@
             var LanguageCode = this.GetCurrentLanguageCode();
 
             // First Attempt: Try the current language:
-            if (this.GroupNames[LanguageCode].ContainsKey(GroupID))
+            if (this.GroupNames[LanguageCode].TryGetValue(GroupID, out var GroupIDResult))
             {
-                return this.GroupNames[LanguageCode][GroupID];
+                return GroupIDResult;
             }
 
             // Second Attempt: Try English:
-            if (this.GroupNames["en"].ContainsKey(GroupID))
+            if (this.GroupNames["en"].TryGetValue(GroupID, out var EnglishResult))
             {
-                return this.GroupNames["en"][GroupID];
+                return EnglishResult;
             }
 
             // Third Attempt: Return the ID and write an error message to Console:
@@ -218,15 +218,15 @@
             var LanguageCode = this.GetCurrentLanguageCode();
 
             // First Attempt: Try the current language:
-            if (this.GeneralStrings[LanguageCode].ContainsKey(GeneralStringsID))
+            if (this.GeneralStrings[LanguageCode].TryGetValue(GeneralStringsID, out var GeneralStringsIDResult))
             {
-                return this.GeneralStrings[LanguageCode][GeneralStringsID];
+                return GeneralStringsIDResult;
             }
 
             // Second Attempt: Try English:
-            if (this.GeneralStrings["en"].ContainsKey(GeneralStringsID))
+            if (this.GeneralStrings["en"].TryGetValue(GeneralStringsID, out var EnglishResult))
             {
-                return this.GeneralStrings["en"][GeneralStringsID];
+                return EnglishResult;
             }
 
             // Third Attempt: Return the ID and write an error message to Console:

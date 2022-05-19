@@ -1,9 +1,15 @@
 {
   "CommandPostFavourites":                    "CP: Favourites",
 
+  "FCP.Audio Inspector":                      "FCP: Audio Inspector",
   "FCP.Video Inspector":                      "FCP: Video Inspector",
 
-  "FCP.Timeline":                             "FCP: Timeline",
+  "FCP.Blend Modes":                          "FCP: Blend Modes",
+
+  "FCP.Color Board":                          "FCP: Color Board",
+  "FCP.Color Wheels":                         "FCP: Color Wheels",
+
+  "FCP.Timeline":                             "FCP: Timeline",  
 
   "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
   "FCPPlugin.generator":                      "FCP: Generators",

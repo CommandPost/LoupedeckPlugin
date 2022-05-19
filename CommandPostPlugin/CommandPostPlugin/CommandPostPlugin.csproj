@@ -53,6 +53,10 @@
           <command>killall LoupedeckConfig || true</command>
           <externalConsole>True</externalConsole>
         </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>open -n /Applications/Loupedeck.app</command>
+        </Command>
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>
