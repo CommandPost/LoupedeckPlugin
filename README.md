@@ -36,6 +36,121 @@ Once installed, you can access the CommandPost actions from the CommandPost icon
 
 ![LoupedeckConfig](Documentation/Images/03-loupedeck.png)
 
+## CommandPost Favourites:
+
+Because CommandPost has so many actions, as well as many user customisable actions (such as Lua Snippets), we offer a way for users to manually bring across specific actions from CommandPost to the LoupedeckConfig application.
+
+In the Loupedeck Plugin control surface panel, there's a section for "favourites":
+
+![Favourites](Documentation/Images/05-favourites.png)
+
+Here you have 50 favourites where you can assign press, turn left and turn right actions from anything in the CommandPost Search Console.
+
+You can learn more about the CommandPost Search Console [here](https://help.commandpost.io/interface/search_console).
+
+In the above screenshot we've assigned "Toggle Mute Volume" to press, "Decrease Volume" to turn left and "Increase Volume" to turn right.
+
+Now within the LoupedeckConfig application, when CommandPost selected, you'll see a new action folder called "CP: Favourites".
+
+You can now apply "Favourite 01" to whatever knob or button you want to trigger the volume controls we set up in CommandPost.
+
+![Favourites](Documentation/Images/06-loupedeck-favourites.png)
+
+## Localisation:
+
+To keep the CommandPost Loupedeck Plugin as simple and as friendly as possible, we use basic JSON files to store all localisation information.
+
+Currently the CommandPost Loupedeck Plugin defaults to using whatever language the LoupedeckConfig application is set to.
+
+However, currently if you change the LoupedeckConfig application language, you need to restart the Loupedeck Service and LoupedeckConfig application for the CommandPost Plugin to update the language. We hope to fix this in a future beta.
+
+English is regarded as the "hero" language, so if a translation doesn't exist in a language, it will fallback to English by default.
+
+There's a couple of different files:
+
+### adjustments.json
+
+This stores all the adjustment (i.e. knob) actions in a simple JSON table, where the key is the internal identifier and the value is the group identifier.
+
+For example:
+
+```json
+{
+  "CommandPostFavourite01":                         "CommandPostFavourites",
+  "CommandPostFavourite02":                         "CommandPostFavourites"
+}
+```
+
+You can modify this file on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/blob/main/CommandPostPlugin/CommandPostPlugin/JSON/Adjustments/adjustments.json).
+
+### commands.json
+
+This stores all the commands (i.e. button) actions in a simple JSON table, where the key is the internal identifier and the value is the group identifier.
+
+For example:
+
+```json
+{
+  "Command Set Shortcuts.General.Paste as Connected": "FCPCommandSet.General",
+  "Command Set Shortcuts.Marking.Range Selection Tool": "FCPCommandSet.Marking"
+}
+```
+
+You can modify this file on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/blob/main/CommandPostPlugin/CommandPostPlugin/JSON/Commands/commands.json).
+
+### displaynames-languagecode.json
+
+This file translates a internal identifier (found in the `adjustments.json` and `commands.json`) to a human readable display name that you find in the LoupedeckConfig user interface.
+
+The language code is a two character code, for example: "de", "en", "fr", "ja" and "ko".
+
+For example:
+
+```json
+{
+  "Video Inspector.Compositing.Opacity":                    "Opacity",
+  "Video Inspector.Transform.Position X":                   "Position X",
+  "Video Inspector.Transform.Position Y":                   "Position Y"
+}
+```
+
+You can modify these files on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/tree/main/CommandPostPlugin/CommandPostPlugin/JSON/DisplayNames).
+
+### groupnames-languagecode.json
+
+This file translate a group identifier to a human readable group display name that you find in the LoupedeckConfig user interface.
+
+For example:
+
+```json
+{
+  "CommandPostFavourites":                    "CP: Favourites",
+  "FCP.Video Inspector":                      "FCP: Video Inspector",
+  "FCP.Timeline":                             "FCP: Timeline"
+}
+```
+
+You can modify these files on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/tree/main/CommandPostPlugin/CommandPostPlugin/JSON/GroupNames).
+
+### general-languagecode.json
+
+This file contains general translations used by the CommandPost Loupedeck Plugin.
+
+The key is the unique identifier, and the value is the human readable string.
+
+For example:
+
+```json
+{
+  "CommandPostURL":                           "https://commandpost.io",
+  "CommandPostNotRunningError":               "CommandPost is not running.",
+  "CommandPostWebSocketError":                "CommandPost is not connected.",
+  "CommandPostWebSocketSpecificError":        "WebSocket Server Error: "
+}
+```
+
+You can modify these files on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/tree/main/CommandPostPlugin/CommandPostPlugin/JSON/General).
+
 ## Known Issues:
 
 - Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow.

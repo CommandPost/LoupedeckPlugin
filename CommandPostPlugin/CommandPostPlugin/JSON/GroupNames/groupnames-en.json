@@ -1,6 +1,5 @@
 {
-  "CommandPostFavouritesPress":               "CP: Favourites (Press)",
-  "CommandPostFavouritesTurn":                "CP: Favourites (Turn)",
+  "CommandPostFavourites":                    "CP: Favourites",
 
   "FCP.Video Inspector":                      "FCP: Video Inspector",
 

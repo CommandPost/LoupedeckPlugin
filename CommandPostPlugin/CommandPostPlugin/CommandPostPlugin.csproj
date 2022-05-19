@@ -43,6 +43,16 @@
           <type>AfterBuild</type>
           <command>cp -f "/Users/chrishocking/Documents/GitHub/LoupedeckPlugin/CommandPostPlugin/bin/Release/CommandPostPlugin.dll" "/Users/chrishocking/.local/share/Loupedeck/Plugins/CommandPostPlugin/bin/mac/CommandPostPlugin.dll"</command>
         </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>killall Loupedeck || true</command>
+          <externalConsole>True</externalConsole>
+        </Command>
+        <Command>
+          <type>AfterBuild</type>
+          <command>killall LoupedeckConfig || true</command>
+          <externalConsole>True</externalConsole>
+        </Command>
       </CustomCommands>
     </CustomCommands>
   </PropertyGroup>

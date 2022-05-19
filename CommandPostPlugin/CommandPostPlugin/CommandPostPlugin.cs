@@ -7,8 +7,10 @@ namespace Loupedeck.CommandPostPlugin
     using System.Globalization;
     using System.Linq;
     using System.Text.Json;
-    using System;    
-    
+    using System;
+    using System.Threading;
+    using System.Threading.Tasks;
+
     /// <summary>
     /// Defines a WebSocket Message.
     /// </summary>
@@ -74,37 +76,19 @@ namespace Loupedeck.CommandPostPlugin
         /// Triggered when the Plugin loads.
         /// </summary>
         public override void Load()
-        {
-            //Console.WriteLine("[CP] Setting language to de-DE");
-            //this.Localization.SetCurrentLanguage("de-DE");
-
-            // Set the Language to the Language of the LoupedeckConfig app:
-            //this.Localization.SetCurrentLanguage(LocalizationEngine.DefaultLanguage);
-
+        {            
+            // Set the Language to the Language of the LoupedeckConfig app:         
             this.Localization.SetCurrentLanguage(this.Localization.LoupedeckLanguage);
-            
+
+            // Write a list of support languages for debugging purposes:
             var supportedLanguages = this.Localization.SupportedLanguages;
             foreach (var supportedLanguage in supportedLanguages)
             {
                 Console.WriteLine("[CP] Supported Language: " + supportedLanguage);
             }
 
+            // Write the current language for debugging purposes:
             Console.WriteLine("[CP] Current Language: " + this.Localization.CurrentLanguage);
-
-
-            // Detect Language Changes:
-            this.Localization.LanguageChanged += (sender, e) =>
-            {
-                // TODO: Currently this doesn't ever trigger?!?
-                Console.WriteLine("[CP] LANGUAGE CHANGED! " + this.GetLoupedeckLanguageCode());
-            };
-
-            // Detect Plugin Actions Change Requests:
-            this.PluginActionsChangedRequest += (sender, e) =>
-            {
-                // TODO: Currently this doesn't ever trigger?!?
-                Console.WriteLine("[CP] PluginActionsChangedRequest");
-            };
 
             // Load the localisation class:
             this.localisation = new CPLocalisation(this);
@@ -117,6 +101,41 @@ namespace Loupedeck.CommandPostPlugin
 
             // Update the Plugin Status:
             this.UpdatePluginStatus();
+
+            // Check every 10 seconds for language changes:
+            this.PollForLanguageChanges();
+        }
+
+        /// <summary>
+        /// Check every 10 seconds for language changes to LoupedeckConfig.
+        /// </summary>
+        public void PollForLanguageChanges()
+        {
+            var delay = 10;
+            var cancellationTokenSource = new CancellationTokenSource();
+            var token = cancellationTokenSource.Token;
+            var listener = Task.Factory.StartNew(() =>
+            {
+                while (true)
+                {
+                    var LoupedeckLanguage = this.Localization.LoupedeckLanguage;
+                    var PlugInLanguage = this.Localization.CurrentLanguage;
+                    if (LoupedeckLanguage != PlugInLanguage)
+                    {
+                        Console.WriteLine($"[CP] Language has changed from '{PlugInLanguage}' to '{LoupedeckLanguage}'.");
+                        this.Localization.SetCurrentLanguage(this.Localization.LoupedeckLanguage);
+
+                        // Write the current language for debugging purposes:
+                        Console.WriteLine("[CP] Current Language: " + this.Localization.CurrentLanguage);
+                    } 
+
+                    Thread.Sleep(delay);
+                    if (token.IsCancellationRequested)
+                    {
+                        break;
+                    }
+                }
+            }, token, TaskCreationOptions.LongRunning, TaskScheduler.Default);
         }
 
         /// <summary>
