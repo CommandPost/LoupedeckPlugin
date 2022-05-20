@@ -24,7 +24,7 @@
         /// <summary>
         /// A dictionary of Commands.
         /// </summary>
-        private Dictionary<String, String> Commands;
+        private Dictionary<String, String> CachedCommands;
 
         /// <summary>
         /// A Loupedeck Commands Plugin that's populated data sent via WebSocket messages.
@@ -50,6 +50,9 @@
             // Load the localisation class:
             this.localisation = new CPLocalisation(this.plugin);
 
+            // Setup our display cache:
+            this.CachedCommands = new Dictionary<String, String>();
+
             // Get WebSocket Events:
             this.plugin.NewCommandsEvents += (sender, e) =>
             {
@@ -66,12 +69,15 @@
                     var GroupName = this.localisation.GetGroupName(actionID);
 
                     // Deseralize the actionValue data:
-                    this.Commands = JsonSerializer.Deserialize<Dictionary<String, String>>(actionValue);
-                    foreach (KeyValuePair<String, String> command in this.Commands)
+                    Dictionary<String, String>  Commands = JsonSerializer.Deserialize<Dictionary<String, String>>(actionValue);
+                    foreach (KeyValuePair<String, String> command in Commands)
                     {
                         // Add a new parameter to the LoupedeckConfig application:
                         this.AddParameter(command.Key, command.Value, GroupName);
-                    }                                
+
+                        // Save the command to the cache:
+                        this.CachedCommands[command.Key] = command.Value;
+                    }                    
                 }
             };
 
@@ -112,7 +118,7 @@
             if (actionParameter.IsNullOrEmpty()) { return null; }
 
             // Get Display Name from JSON:
-            if (this.Commands.TryGetValue(actionParameter, out var value))
+            if (this.CachedCommands.TryGetValue(actionParameter, out var value))
             {
                 return value;
             }
