@@ -1,4 +1,8 @@
 {
+  "Macros.Toggle Fullscreen":                                     "Toggle Fullscreen",
+  "Macros.Trim Left Edge":                                        "Trim Left Edge",
+  "Macros.Trim Right Edge":                                       "Trim Right Edge",
+
   "Audio Inspector.Volume":                                       "Volume",
 
   "Video Inspector.Compositing.Opacity":                          "Opacity",
@@ -13,6 +17,8 @@
   "Video Inspector.Crop.Crop Left":                               "Crop Left",
   "Video Inspector.Crop.Crop Right":                              "Crop Right",
   "Video Inspector.Crop.Crop Bottom":                             "Crop Bottom",
+
+  "Video Inspector.Compositing.Blend Modes":                      "Change Blend Modes",
 
   "Video Inspector.Compositing.Blend Mode.Normal":                "Normal",
   "Video Inspector.Compositing.Blend Mode.Subtract":              "Subtract",

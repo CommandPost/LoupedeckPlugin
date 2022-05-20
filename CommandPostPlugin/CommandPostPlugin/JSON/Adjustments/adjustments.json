@@ -1,5 +1,10 @@
 {
+  "Macros.Trim Left Edge":                          "FCP.Macros",
+  "Macros.Trim Right Edge":                         "FCP.Macros",  
+
   "Audio Inspector.Volume":                         "FCP.Audio Inspector",
+
+  "Video Inspector.Compositing.Blend Modes":        "FCP.Blend Modes",
 
   "Video Inspector.Compositing.Opacity":            "FCP.Video Inspector",
   "Video Inspector.Transform.Position X":           "FCP.Video Inspector",

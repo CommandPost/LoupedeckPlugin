@@ -1,6 +1,8 @@
 {
   "CommandPostFavourites":                    "CP: Favourites",
 
+  "FCP.Macros":                               "FCP: Macros",
+
   "FCP.Audio Inspector":                      "FCP: Audio Inspector",
   "FCP.Video Inspector":                      "FCP: Video Inspector",
 

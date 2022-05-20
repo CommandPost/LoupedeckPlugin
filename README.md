@@ -16,6 +16,40 @@ However, prior to it being officially included in CommandPost, you can find beta
 
 Feature requests and bug reports are very much welcome!
 
+## Frequently Asked Questions
+
+As we get questions about the Loupedeck Plugin for CommandPost we'll try and answer them here.
+
+### Can the CommandPost Loupedeck Plugin actions only be used with Final Cut Pro?
+
+No, the CommandPost Loupedeck Plugin is an "Universal" plugin, so you can use it with any application.
+
+To enable CommandPost Loupedeck Plugin actions within the LoupedeckConfig application, select the item next to plugins:
+
+![Plugin Settings](Documentation/Images/11-plugins-settings.png)
+
+You can then tick "CommandPost" under the "Universal Plugins" list:
+
+![Universal Plugins](Documentation/Images/12-universal-plugins.png)
+
+### Do I still need to use the Loupedeck4.0 Command Set?
+
+Currently the official Final Cut Pro support for Loupedeck forcefully installs and changes to the Loupedeck4.0 Command Set when you launch the Loupedeck service.
+
+CommandPost does not require a specific Command Set to be installed, as it reads the active Command Set each time you try and trigger a Command Set action.
+
+If you trigger an action that does not have a Command Set applied, you'll be presented with a macOS notification like the below:
+
+![Command Set Notification](Documentation/Images/08-commandsset-notification.png)
+
+When you hover your mouse over the notification, you're presented with the option to "Assign Shortcut":
+
+![Command Set Notification](Documentation/Images/09-commandsset-notification-hover.png)
+
+When you click on "Assign Shortcut" it will take you to the Final Cut Pro Command Editor, and pre-populate the shortcut you want to assign:
+
+![Command Editor](Documentation/Images/10-command-editor.png)
+
 ## Installing the Loupedeck Plugin Beta Releases:
 
 You can download the latest beta release of CommandPost with the Loupedeck Plugin [here](https://github.com/CommandPost/LoupedeckPlugin/releases).
