@@ -1,4 +1,9 @@
 {
+  "KeyboardMaestro":                          "Keyboard Maestro",
+
+  "macOS.Spaces":                             "macOS: Spaces",
+  "macOS.Shortcuts":                          "macOS: Shortcuts App",
+
   "CommandPostFavourites":                    "CP: Favourites",
 
   "FCP.Macros":                               "FCP: Macros",
@@ -12,6 +17,8 @@
   "FCP.Color Wheels":                         "FCP: Color Wheels",
 
   "FCP.Timeline":                             "FCP: Timeline",  
+
+  "FCP.Viewer":                               "FCP: Viewer",
 
   "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
   "FCPPlugin.generator":                      "FCP: Generators",

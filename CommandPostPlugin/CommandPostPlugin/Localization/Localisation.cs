@@ -24,6 +24,11 @@
         private Dictionary<String, String> Commands;
 
         /// <summary>
+        /// A dictionary of programatically generated Commands (i.e. buttons).
+        /// </summary>
+        private Dictionary<String, String> CommandsFromWebSocket;
+
+        /// <summary>
         /// A dictionary of Adjustments (i.e. knobs).
         /// </summary>
         private Dictionary<String, String> Adjustments;
@@ -41,7 +46,7 @@
         /// <summary>
         /// A dictionary of Group Names.
         /// </summary>
-        private Dictionary<String, Dictionary<String, String>> GroupNames;
+        private Dictionary<String, Dictionary<String, String>> GroupNames;        
               
         /// <summary>
         /// A support class for reading and processing the translation data contained within JSON files.
@@ -66,13 +71,15 @@
         {
             // Create Dictionaries:
             this.Commands = new Dictionary<String, String>();
+            this.CommandsFromWebSocket = new Dictionary<String, String>();
             this.Adjustments = new Dictionary<String, String>();
             this.GeneralStrings = new Dictionary<String, Dictionary<String, String>>();
             this.DisplayNames = new Dictionary<String, Dictionary<String, String>>();
             this.GroupNames = new Dictionary<String, Dictionary<String, String>>();
-
+            
             // Load Commands & Adjustments from JSON files:
             this.Commands = GetJSONData(null, "commands");
+            this.CommandsFromWebSocket = GetJSONData(null, "commandsfromwebsocket");
             this.Adjustments = GetJSONData(null, "adjustments");
 
             // Load DisplayNames JSON files:
@@ -140,18 +147,19 @@
         /// Gets a list of available Commands from the embedded JSON files.
         /// </summary>
         /// <returns>A dictionary containing the available Commands.</returns>
-        public Dictionary<String, String> GetCommands()
-        {
-            return this.Commands;
-        }
+        public Dictionary<String, String> GetCommands() => this.Commands;
+
+        /// <summary>
+        /// Gets a list of available Commands From WebSocket from the embedded JSON files.
+        /// </summary>
+        /// <returns>A dictionary containing the available Commands.</returns>
+        public Dictionary<String, String> GetCommandsFromWebSocket() => this.CommandsFromWebSocket;
 
         /// <summary>
         /// Gets a list of available Adjustments from the embedded JSON files.
         /// </summary>
         /// <returns>A dictionary containing the available Adjustments.</returns>
-        public Dictionary<String, String> GetAdjustments() {
-            return this.Adjustments;
-        }
+        public Dictionary<String, String> GetAdjustments() => this.Adjustments;
 
         /// <summary>
         /// Gets a Display Name from the JSON data.

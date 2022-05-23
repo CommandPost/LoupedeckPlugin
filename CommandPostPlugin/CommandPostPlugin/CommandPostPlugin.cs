@@ -216,12 +216,22 @@ namespace Loupedeck.CommandPostPlugin
                     allSockets.Add(socket);
                     this.UpdatePluginStatus();
 
-                    // Request a list of Commands:
-                    var jsonString = JsonSerializer.Serialize(new
+                    // Send Requests for any "CommandsFromWebSocket" actions:
+                    Dictionary<String, String> CommandsFromWebSocket = this.localisation.GetCommandsFromWebSocket();
+
+                    Console.WriteLine("[CP] CommandsFromWebSocket: " + CommandsFromWebSocket);
+
+                    foreach (KeyValuePair<String, String> command in CommandsFromWebSocket)
                     {
-                        actionName = "RequestCommands"
-                    });                    
-                    this.SendWebSocketMessage(jsonString);
+
+                        Console.WriteLine("[CP] Request" + command.Key);
+
+                        var jsonString = JsonSerializer.Serialize(new
+                        {
+                            actionName = "Request" + command.Key
+                        });
+                        this.SendWebSocketMessage(jsonString);
+                    }
                 };
                 socket.OnClose = () =>
                 {

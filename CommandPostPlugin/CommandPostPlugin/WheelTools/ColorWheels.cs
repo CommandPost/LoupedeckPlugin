@@ -70,11 +70,11 @@
             {
                 using (var bitmapBuilder = this.CreateBitmapBuilder())
                 {
-                    // Get the translated display name:
-                    var translatedDisplayName = this.localisation.GetDisplayName(this.TemplateDisplayName);
+                    // Get the translated display name (ignoring the "FCP "):
+                    var translatedDisplayName = this.localisation.GetDisplayName(this.TemplateDisplayName).Substring(4);
 
                     bitmapBuilder.SetBackgroundImage(backgroundImage);
-                    bitmapBuilder.DrawText(translatedDisplayName, 0, 80, 240, 80, new BitmapColor(220, 220, 220), 26);
+                    bitmapBuilder.DrawText(translatedDisplayName, 0, 110, 240, 80, new BitmapColor(220, 220, 220), 26);
 
                     return bitmapBuilder.ToImage();
                 }

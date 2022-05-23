@@ -6,6 +6,17 @@
 
   "Video Inspector.Compositing.Blend Modes":        "FCP.Blend Modes",
 
+  "Viewer.Color Channels":                          "FCP.Viewer",
+
+  "Video Inspector.Distort.Bottom Left X":          "FCP.Video Inspector",
+  "Video Inspector.Distort.Bottom Left Y":          "FCP.Video Inspector",
+  "Video Inspector.Distort.Bottom Right X":         "FCP.Video Inspector",
+  "Video Inspector.Distort.Bottom Right Y":         "FCP.Video Inspector",
+  "Video Inspector.Distort.Top Left X":             "FCP.Video Inspector",
+  "Video Inspector.Distort.Top Left Y":             "FCP.Video Inspector",
+  "Video Inspector.Distort.Top Right X":            "FCP.Video Inspector",
+  "Video Inspector.Distort.Top Right Y":            "FCP.Video Inspector",
+
   "Video Inspector.Compositing.Opacity":            "FCP.Video Inspector",
   "Video Inspector.Transform.Position X":           "FCP.Video Inspector",
   "Video Inspector.Transform.Position Y":           "FCP.Video Inspector",

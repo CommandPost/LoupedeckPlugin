@@ -156,6 +156,7 @@
     <EmbeddedResource Include="Localization\CommandPostPlugin_fr-FR.xliff" />
     <EmbeddedResource Include="Localization\CommandPostPlugin_ja-JA.xliff" />
     <EmbeddedResource Include="Localization\CommandPostPlugin_ko-KO.xliff" />
+    <EmbeddedResource Include="JSON\Commands\commandsfromwebsocket.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,4 +1,11 @@
 {
+  "MoveLeftASpace":                                                                         "macOS.Spaces",
+  "MoveRightASpace":                                                                        "macOS.Spaces",
+  "ToggleAppExpose":                                                                        "macOS.Spaces",
+  "ToggleLaunchPad":                                                                        "macOS.Spaces",
+  "ToggleMissionControl":                                                                   "macOS.Spaces",
+  "ToggleShowDesktop":                                                                      "macOS.Spaces",
+
   "Macros.Toggle Fullscreen":                                                               "FCP.Macros",
 
   "Color Wheels.Master.Reset":                                                              "FCP.Color Wheels",

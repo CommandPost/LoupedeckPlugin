@@ -27,6 +27,11 @@
         private Dictionary<String, String> CachedCommands;
 
         /// <summary>
+        /// A dictionary of Commands.
+        /// </summary>
+        private Dictionary<String, String> CachedValues;
+
+        /// <summary>
         /// A Loupedeck Commands Plugin that's populated data sent via WebSocket messages.
         /// </summary>
         public CommandsFromWebSocket() : base()
@@ -52,6 +57,7 @@
 
             // Setup our display cache:
             this.CachedCommands = new Dictionary<String, String>();
+            this.CachedValues = new Dictionary<String, String>();
 
             // Get WebSocket Events:
             this.plugin.NewCommandsEvents += (sender, e) =>
@@ -77,6 +83,7 @@
 
                         // Save the command to the cache:
                         this.CachedCommands[command.Key] = command.Value;
+                        this.CachedValues[command.Key] = actionID;
                     }                    
                 }
             };
@@ -96,7 +103,7 @@
                 // Send WebSocket message when the action is triggered via button press:                
                 var jsonString = JsonSerializer.Serialize(new
                 {
-                    actionName = "ApplyWebSocketCommand",
+                    actionName = this.CachedValues[actionParameter],
                     actionValue = actionParameter,
                 });
                 this.plugin.SendWebSocketMessage(jsonString);
