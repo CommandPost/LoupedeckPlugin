@@ -1,6 +1,6 @@
 {
   "Macros.Trim Left Edge":                          "FCP.Macros",
-  "Macros.Trim Right Edge":                         "FCP.Macros",  
+  "Macros.Trim Right Edge":                         "FCP.Macros",
 
   "Audio Inspector.Volume":                         "FCP.Audio Inspector",
 
@@ -30,6 +30,8 @@
   "Video Inspector.Crop.Crop Right":                "FCP.Video Inspector",
   "Video Inspector.Crop.Crop Bottom":               "FCP.Video Inspector",
 
+  "Multicam.Bank":                                  "FCP.Multicam",
+
   "Timeline.Playhead":                              "FCP.Timeline",
   "Timeline.PlayheadX2":                            "FCP.Timeline",
   "Timeline.PlayheadX4":                            "FCP.Timeline",
@@ -38,26 +40,54 @@
   "Timeline.PlayheadX16":                           "FCP.Timeline",
   "Timeline.PlayheadX20":                           "FCP.Timeline",
 
+  "Timeline.Frame":                                 "FCP.Timeline",
+  "Timeline.Edit":                                  "FCP.Timeline",
+  "Timeline.Marker":                                "FCP.Timeline",
+  "Timeline.Keyframe":                              "FCP.Timeline",
+
+  "Timeline.Nudge Marker":                          "FCP.Timeline",
+
+  "Timeline.Trim - Nudge":                          "FCP.Timeline",
+
+  "Timeline.Nudge Vertically":                      "FCP.Timeline",
+
   "Timeline.Zoom":                                  "FCP.Timeline",
   "Timeline.Clip Height":                           "FCP.Timeline",
 
   "Color Wheels.Master.Vertical":                   "FCP.Color Wheels",
-  "Color Wheels.Master.Horizontal":                 "FCP.Color Wheels",
   "Color Wheels.Shadows.Vertical":                  "FCP.Color Wheels",
-  "Color Wheels.Shadows.Horizontal":                "FCP.Color Wheels",
   "Color Wheels.Midtones.Vertical":                 "FCP.Color Wheels",
-  "Color Wheels.Midtones.Horizontal":               "FCP.Color Wheels",
   "Color Wheels.Highlights.Vertical":               "FCP.Color Wheels",
+
+  "Color Wheels.Master.Horizontal":                 "FCP.Color Wheels",
+  "Color Wheels.Shadows.Horizontal":                "FCP.Color Wheels",
+  "Color Wheels.Midtones.Horizontal":               "FCP.Color Wheels",
   "Color Wheels.Highlights.Horizontal":             "FCP.Color Wheels",
 
   "Color Wheels.Master.Saturation":                 "FCP.Color Wheels",
-  "Color Wheels.Master.Brightness":                 "FCP.Color Wheels",    
   "Color Wheels.Shadows.Saturation":                "FCP.Color Wheels",
-  "Color Wheels.Shadows.Brightness":                "FCP.Color Wheels",    
   "Color Wheels.Midtones.Saturation":               "FCP.Color Wheels",
-  "Color Wheels.Midtones.Brightness":               "FCP.Color Wheels",    
   "Color Wheels.Highlights.Saturation":             "FCP.Color Wheels",
+
+  "Color Wheels.Master.Brightness":                 "FCP.Color Wheels",
+  "Color Wheels.Shadows.Brightness":                "FCP.Color Wheels",
+  "Color Wheels.Midtones.Brightness":               "FCP.Color Wheels",
   "Color Wheels.Highlights.Brightness":             "FCP.Color Wheels",
+
+  "Color Wheels.Master.Red":                        "FCP.Color Wheels",
+  "Color Wheels.Shadows.Red":                       "FCP.Color Wheels",
+  "Color Wheels.Midtones.Red":                      "FCP.Color Wheels",
+  "Color Wheels.Highlights.Red":                    "FCP.Color Wheels",
+
+  "Color Wheels.Master.Green":                      "FCP.Color Wheels",
+  "Color Wheels.Shadows.Green":                     "FCP.Color Wheels",
+  "Color Wheels.Midtones.Green":                    "FCP.Color Wheels",
+  "Color Wheels.Highlights.Green":                  "FCP.Color Wheels",
+
+  "Color Wheels.Master.Blue":                       "FCP.Color Wheels",
+  "Color Wheels.Shadows.Blue":                      "FCP.Color Wheels",
+  "Color Wheels.Midtones.Blue":                     "FCP.Color Wheels",
+  "Color Wheels.Highlights.Blue":                   "FCP.Color Wheels",
 
   "Color Wheels.Temperature":                       "FCP.Color Wheels",
   "Color Wheels.Tint":                              "FCP.Color Wheels",

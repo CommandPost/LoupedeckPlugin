@@ -14,6 +14,8 @@
 
   "Audio Inspector.Volume":                                                                     "Volume",
 
+  "Multicam.Bank":                                                                              "Next/Previous Bank",
+
   "Video Inspector.Compositing.Opacity":                                                        "Opacity",
   "Video Inspector.Transform.Position X":                                                       "Position X",
   "Video Inspector.Transform.Position Y":                                                       "Position Y",
@@ -74,33 +76,61 @@
   "Timeline.PlayheadX16":                                                                       "Playhead (x16)",
   "Timeline.PlayheadX20":                                                                       "Playhead (x20)",
 
+  "Timeline.Frame":                                                                             "Next/Previous Frame",
+  "Timeline.Edit":                                                                              "Next/Previous Edit",
+  "Timeline.Marker":                                                                            "Next/Previous Marker",
+  "Timeline.Keyframe":                                                                          "Next/Previous Keyframe",
+
+  "Timeline.Nudge Marker":                                                                      "Nudge Marker",
+
+  "Timeline.Trim - Nudge":                                                                      "Nudge (Trim)",
+
+  "Timeline.Nudge Vertically":                                                                  "Nudge Up/Down",
+
   "Timeline.Zoom":                                                                              "Timeline Zoom",
   "Timeline.Clip Height":                                                                       "Timeline Clip Height",
 
-  "Color Wheels.Master.Vertical":                                                               "Master (Vertical)",
-  "Color Wheels.Master.Horizontal":                                                             "Master (Horizontal)",
+  "Color Wheels.Master.Vertical":                                                               "Global (Vertical)",
   "Color Wheels.Shadows.Vertical":                                                              "Shadows (Vertical)",
-  "Color Wheels.Shadows.Horizontal":                                                            "Shadows (Horizontal)",
   "Color Wheels.Midtones.Vertical":                                                             "Midtones (Vertical)",
-  "Color Wheels.Midtones.Horizontal":                                                           "Midtones (Horizontal)",
   "Color Wheels.Highlights.Vertical":                                                           "Highlights (Vertical)",
-  "Color Wheels.Highlights.Horizontal":                                                         "Highlights(Horizontal)",
 
-  "Color Wheels.Master.Saturation":                                                             "Master - Saturation",
-  "Color Wheels.Master.Brightness":                                                             "Master - Brightness",    
+  "Color Wheels.Master.Horizontal":                                                             "Global (Horizontal)",
+  "Color Wheels.Shadows.Horizontal":                                                            "Shadows (Horizontal)",
+  "Color Wheels.Midtones.Horizontal":                                                           "Midtones (Horizontal)",
+  "Color Wheels.Highlights.Horizontal":                                                         "Highlights (Horizontal)",
+
+  "Color Wheels.Master.Saturation":                                                             "Global - Saturation",
   "Color Wheels.Shadows.Saturation":                                                            "Shadows - Saturation",
-  "Color Wheels.Shadows.Brightness":                                                            "Shadows - Brightness",    
   "Color Wheels.Midtones.Saturation":                                                           "Midtones - Saturation",
-  "Color Wheels.Midtones.Brightness":                                                           "Midtones - Brightness",    
   "Color Wheels.Highlights.Saturation":                                                         "Highlights - Saturation",
+
+  "Color Wheels.Master.Brightness":                                                             "Global - Brightness",
+  "Color Wheels.Shadows.Brightness":                                                            "Shadows - Brightness",
+  "Color Wheels.Midtones.Brightness":                                                           "Midtones - Brightness",
   "Color Wheels.Highlights.Brightness":                                                         "Highlights - Brightness",
 
-  "Color Wheels.Master.Reset":                                                                  "Reset Master",
-  "Color Wheels.Master.Reset All":                                                              "Reset Master (All)",    
+  "Color Wheels.Master.Red":                                                                    "Global - Red",
+  "Color Wheels.Shadows.Red":                                                                   "Shadows - Red",
+  "Color Wheels.Midtones.Red":                                                                  "Midtones - Red",
+  "Color Wheels.Highlights.Red":                                                                "Highlights - Red",
+
+  "Color Wheels.Master.Green":                                                                  "Global - Green",
+  "Color Wheels.Shadows.Green":                                                                 "Shadows - Green",
+  "Color Wheels.Midtones.Green":                                                                "Midtones - Green",
+  "Color Wheels.Highlights.Green":                                                              "Highlights - Green",
+
+  "Color Wheels.Master.Blue":                                                                   "Global - Blue",
+  "Color Wheels.Shadows.Blue":                                                                  "Shadows - Blue",
+  "Color Wheels.Midtones.Blue":                                                                 "Midtones - Blue",
+  "Color Wheels.Highlights.Blue":                                                               "Highlights - Blue",
+
+  "Color Wheels.Master.Reset":                                                                  "Reset Global",
+  "Color Wheels.Master.Reset All":                                                              "Reset Global (All)",
   "Color Wheels.Shadows.Reset":                                                                 "Reset Shadows",
-  "Color Wheels.Shadows.Reset All":                                                             "Reset Shadows (All)",    
+  "Color Wheels.Shadows.Reset All":                                                             "Reset Shadows (All)",
   "Color Wheels.Midtones.Reset":                                                                "Reset Midtones",
-  "Color Wheels.Midtones.Reset All":                                                            "Reset Midtones (All)",        
+  "Color Wheels.Midtones.Reset All":                                                            "Reset Midtones (All)",
   "Color Wheels.Highlights.Reset":                                                              "Reset Highlights",
   "Color Wheels.Highlights.Reset All":                                                          "Reset Highlights (All)",
 
@@ -111,22 +141,22 @@
 
   "Color Wheels.Contrast":                                                                      "Contrast",
 
-  "Color Board.Color Master (Angle)":                                                           "Color Master (Angle)",
+  "Color Board.Color Master (Angle)":                                                           "Color Global (Angle)",
   "Color Board.Color Shadows (Angle)":                                                          "Color Shadows (Angle)",
   "Color Board.Color Midtones (Angle)":                                                         "Color Midtones (Angle)",
   "Color Board.Color Highlights (Angle)":                                                       "Color Highlights (Angle)",
 
-  "Color Board.Color Master (Percentage)":                                                      "Color Master (Percentage)",
+  "Color Board.Color Master (Percentage)":                                                      "Color Global (Percentage)",
   "Color Board.Color Shadows (Percentage)":                                                     "Color Shadows (Percentage)",
   "Color Board.Color Midtones (Percentage)":                                                    "Color Midtones (Percentage)",
   "Color Board.Color Highlights (Percentage)":                                                  "Color Highlights (Percentage)",
-  
-  "Color Board.Saturation Master":                                                              "Saturation Master",
+
+  "Color Board.Saturation Master":                                                              "Saturation Global",
   "Color Board.Saturation Shadows":                                                             "Saturation Shadows",
   "Color Board.Saturation Midtones":                                                            "Saturation Midtones",
   "Color Board.Saturation Highlights":                                                          "Saturation Highlights",
-  
-  "Color Board.Exposure Master":                                                                "Exposure Master",
+
+  "Color Board.Exposure Master":                                                                "Exposure Global",
   "Color Board.Exposure Shadows":                                                               "Exposure Shadows",
   "Color Board.Exposure Midtones":                                                              "Exposure Midtones",
   "Color Board.Exposure Highlights":                                                            "Exposure Highlights",

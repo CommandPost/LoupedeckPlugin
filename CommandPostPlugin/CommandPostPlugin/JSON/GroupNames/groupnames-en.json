@@ -20,6 +20,8 @@
 
   "FCP.Viewer":                               "FCP: Viewer",
 
+  "FCP.Multicam":                             "FCP: Multicam",
+
   "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
   "FCPPlugin.generator":                      "FCP: Generators",
   "FCPPlugin.title":                          "FCP: Titles",
