@@ -140,6 +140,30 @@ For example:
 
 You can modify this file on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/blob/main/CommandPostPlugin/CommandPostPlugin/JSON/Commands/commands.json).
 
+### commandsfromwebsocket.json
+
+This stores all the commands (i.e. button) actions that are programatically generated via WebSocket messages in a simple JSON table, where the key is the internal identifier and the value is not currently used.
+
+For example:
+
+```json
+{
+  "Commands":           "",
+  "Shortcuts":          "",
+  "KeyboardMaestro":    ""
+}
+```
+
+This basically just means that when the CommandPost Loupedeck Plugin loads, it will send the following messages to CommandPost:
+
+- `RequestCommands`
+- `RequestShortcuts`
+- `RequestKeyboardMaestro`
+
+It's then up to CommandPost to send back details about these commands to the Loupedeck Service.
+
+You can modify this file on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/blob/main/CommandPostPlugin/CommandPostPlugin/JSON/Commands/commandsfromwebsocket.json).
+
 ### displaynames-languagecode.json
 
 This file translates a internal identifier (found in the `adjustments.json` and `commands.json`) to a human readable display name that you find in the LoupedeckConfig user interface.
