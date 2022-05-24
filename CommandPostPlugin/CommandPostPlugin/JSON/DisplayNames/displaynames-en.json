@@ -16,6 +16,11 @@
 
   "Multicam.Bank":                                                                              "Next/Previous Bank",
 
+  "Cinematic.Focus Point":                                                                      "Next/Previous Focus Point",
+
+  "360 Viewer.Pan":                                                                             "Pan",
+  "360 Viewer.Tilt":                                                                            "Tilt",
+
   "Video Inspector.Compositing.Opacity":                                                        "Opacity",
   "Video Inspector.Transform.Position X":                                                       "Position X",
   "Video Inspector.Transform.Position Y":                                                       "Position Y",
@@ -25,9 +30,11 @@
   "Video Inspector.Transform.Scale Y":                                                          "Scale Y",
   "Video Inspector.Transform.Anchor X":                                                         "Anchor X",
   "Video Inspector.Transform.Anchor Y":                                                         "Anchor Y",
+
+  "Video Inspector.Crop.Crop Bottom":                                                           "Crop Bottom",
+  "Video Inspector.Crop.Crop Top":                                                              "Crop Top",
   "Video Inspector.Crop.Crop Left":                                                             "Crop Left",
   "Video Inspector.Crop.Crop Right":                                                            "Crop Right",
-  "Video Inspector.Crop.Crop Bottom":                                                           "Crop Bottom",
 
   "Video Inspector.Distort.Bottom Left X":                                                      "Distort: Bottom Left X",
   "Video Inspector.Distort.Bottom Left Y":                                                      "Distort: Bottom Left Y",
@@ -76,19 +83,30 @@
   "Timeline.PlayheadX16":                                                                       "Playhead (x16)",
   "Timeline.PlayheadX20":                                                                       "Playhead (x20)",
 
+  "Timeline.Move 10 Frames":                                                                    "Move 10 Frames",
+
   "Timeline.Frame":                                                                             "Next/Previous Frame",
   "Timeline.Edit":                                                                              "Next/Previous Edit",
   "Timeline.Marker":                                                                            "Next/Previous Marker",
   "Timeline.Keyframe":                                                                          "Next/Previous Keyframe",
+  "Timeline.Field":                                                                             "Next/Previous Field",
+  "Timeline.Subframe":                                                                          "Next/Previous Subframe",
+  "Timeline.Clip":                                                                              "Next/Previous Clip",
+
+  "Timeline.Slide":                                                                             "Slide",
+
+  "Timeline.Select Edge":                                                                       "Select Edge",
+  "Timeline.Select Video Edge":                                                                 "Select Video Edge",
+  "Timeline.Select Audio Edge":                                                                 "Select Audio Edge",
 
   "Timeline.Nudge Marker":                                                                      "Nudge Marker",
-
   "Timeline.Trim - Nudge":                                                                      "Nudge (Trim)",
-
   "Timeline.Nudge Vertically":                                                                  "Nudge Up/Down",
 
   "Timeline.Zoom":                                                                              "Timeline Zoom",
   "Timeline.Clip Height":                                                                       "Timeline Clip Height",
+
+  "Timeline.Waveform Size":                                                                     "Waveform Size",
 
   "Color Wheels.Master.Vertical":                                                               "Global (Vertical)",
   "Color Wheels.Shadows.Vertical":                                                              "Shadows (Vertical)",

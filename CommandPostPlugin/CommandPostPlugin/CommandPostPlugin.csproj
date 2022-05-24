@@ -127,6 +127,7 @@
     <Compile Include="Localization\Localisation.cs" />
     <Compile Include="Models\Events\LanguageChangedEventArgs.cs" />
     <Compile Include="Models\Events\LanguageChangedValueEventArgs.cs" />
+    <Compile Include="Adjustments\AdjustmentsWithoutResetFromJSON.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -157,6 +158,7 @@
     <EmbeddedResource Include="Localization\CommandPostPlugin_ja-JA.xliff" />
     <EmbeddedResource Include="Localization\CommandPostPlugin_ko-KO.xliff" />
     <EmbeddedResource Include="JSON\Commands\commandsfromwebsocket.json" />
+    <EmbeddedResource Include="JSON\Adjustments\adjustments-noreset.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

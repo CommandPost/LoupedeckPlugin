@@ -26,11 +26,15 @@
   "Video Inspector.Transform.Scale Y":              "FCP.Video Inspector",
   "Video Inspector.Transform.Anchor X":             "FCP.Video Inspector",
   "Video Inspector.Transform.Anchor Y":             "FCP.Video Inspector",
+
+  "Video Inspector.Crop.Crop Bottom":               "FCP.Video Inspector",
   "Video Inspector.Crop.Crop Left":                 "FCP.Video Inspector",
   "Video Inspector.Crop.Crop Right":                "FCP.Video Inspector",
-  "Video Inspector.Crop.Crop Bottom":               "FCP.Video Inspector",
+  "Video Inspector.Crop.Crop Top":                  "FCP.Video Inspector",
 
   "Multicam.Bank":                                  "FCP.Multicam",
+
+  "Timeline.Waveform Size":                         "FCP.Timeline",
 
   "Timeline.Playhead":                              "FCP.Timeline",
   "Timeline.PlayheadX2":                            "FCP.Timeline",
@@ -39,17 +43,6 @@
   "Timeline.PlayheadX12":                           "FCP.Timeline",
   "Timeline.PlayheadX16":                           "FCP.Timeline",
   "Timeline.PlayheadX20":                           "FCP.Timeline",
-
-  "Timeline.Frame":                                 "FCP.Timeline",
-  "Timeline.Edit":                                  "FCP.Timeline",
-  "Timeline.Marker":                                "FCP.Timeline",
-  "Timeline.Keyframe":                              "FCP.Timeline",
-
-  "Timeline.Nudge Marker":                          "FCP.Timeline",
-
-  "Timeline.Trim - Nudge":                          "FCP.Timeline",
-
-  "Timeline.Nudge Vertically":                      "FCP.Timeline",
 
   "Timeline.Zoom":                                  "FCP.Timeline",
   "Timeline.Clip Height":                           "FCP.Timeline",

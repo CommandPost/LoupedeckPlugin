@@ -19,8 +19,11 @@
   "FCP.Timeline":                             "FCP: Timeline",  
 
   "FCP.Viewer":                               "FCP: Viewer",
+  "FCP.360 Viewer":                           "FCP: 360° Viewer",
 
   "FCP.Multicam":                             "FCP: Multicam",
+
+  "FCP.Cinematic":                            "FCP: Cinematic",
 
   "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
   "FCPPlugin.generator":                      "FCP: Generators",

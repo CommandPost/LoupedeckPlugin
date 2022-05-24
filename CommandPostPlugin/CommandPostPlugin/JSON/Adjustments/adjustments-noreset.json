@@ -1,0 +1,22 @@
+{
+  "Cinematic.Focus Point":                          "FCP.Cinematic",
+
+  "360 Viewer.Pan":                                 "FCP.360 Viewer",
+  "360 Viewer.Tilt":                                "FCP.360 Viewer",
+
+  "Timeline.Clip":                                  "FCP.Timeline",
+  "Timeline.Edit":                                  "FCP.Timeline",
+  "Timeline.Field":                                 "FCP.Timeline",
+  "Timeline.Frame":                                 "FCP.Timeline",
+  "Timeline.Keyframe":                              "FCP.Timeline",
+  "Timeline.Marker":                                "FCP.Timeline",
+  "Timeline.Move 10 Frames":                        "FCP.Timeline",
+  "Timeline.Nudge Marker":                          "FCP.Timeline",
+  "Timeline.Nudge Vertically":                      "FCP.Timeline",
+  "Timeline.Select Audio Edge":                     "FCP.Timeline",
+  "Timeline.Select Edge":                           "FCP.Timeline",
+  "Timeline.Select Video Edge":                     "FCP.Timeline",
+  "Timeline.Slide":                                 "FCP.Timeline",
+  "Timeline.Subframe":                              "FCP.Timeline",
+  "Timeline.Trim - Nudge":                          "FCP.Timeline"
+}

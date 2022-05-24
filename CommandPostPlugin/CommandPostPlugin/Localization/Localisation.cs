@@ -34,6 +34,11 @@
         private Dictionary<String, String> Adjustments;
 
         /// <summary>
+        /// A dictionary of Adjustments (i.e. knobs) without Reset.
+        /// </summary>
+        private Dictionary<String, String> AdjustmentsWithoutReset;
+
+        /// <summary>
         /// A dictionary of General Strings (i.e. error messages).
         /// </summary>
         private Dictionary<String, Dictionary<String, String>> GeneralStrings;
@@ -73,6 +78,7 @@
             this.Commands = new Dictionary<String, String>();
             this.CommandsFromWebSocket = new Dictionary<String, String>();
             this.Adjustments = new Dictionary<String, String>();
+            this.AdjustmentsWithoutReset = new Dictionary<String, String>();
             this.GeneralStrings = new Dictionary<String, Dictionary<String, String>>();
             this.DisplayNames = new Dictionary<String, Dictionary<String, String>>();
             this.GroupNames = new Dictionary<String, Dictionary<String, String>>();
@@ -81,6 +87,7 @@
             this.Commands = GetJSONData(null, "commands");
             this.CommandsFromWebSocket = GetJSONData(null, "commandsfromwebsocket");
             this.Adjustments = GetJSONData(null, "adjustments");
+            this.AdjustmentsWithoutReset = GetJSONData(null, "adjustments-noreset");
 
             // Load DisplayNames JSON files:
             foreach (var Code in this.SupportedLanguageCodes)
@@ -160,6 +167,12 @@
         /// </summary>
         /// <returns>A dictionary containing the available Adjustments.</returns>
         public Dictionary<String, String> GetAdjustments() => this.Adjustments;
+
+        /// <summary>
+        /// Gets a list of available Adjustments without Reset from the embedded JSON files.
+        /// </summary>
+        /// <returns>A dictionary containing the available Adjustments without Reset.</returns>
+        public Dictionary<String, String> GetAdjustmentsWithoutReset() => this.AdjustmentsWithoutReset;
 
         /// <summary>
         /// Gets a Display Name from the JSON data.
