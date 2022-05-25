@@ -3,32 +3,28 @@ namespace Loupedeck.CommandPostPlugin
     using System;
 
     /// <summary>
-    /// The Client Application Class.
+    /// The Client Application Class. This is not used by the CommandPost Plugin.
     /// </summary>
     public class CommandPostApplication : ClientApplication
     {
         /// <summary>
-        /// The Client Application Class.
+        /// The Client Application Class. This is not used by the CommandPost Plugin.
         /// </summary>
         public CommandPostApplication()
-        {}
+        {
+
+        }
 
         /// <summary>
-        /// Gest the Display Name of the Client Application.
+        /// The Process Name. This is not used by the CommandPost Plugin.
         /// </summary>
-        /// <returns>The display name as a string</returns>
-        public override String GetDisplayName() => "Final Cut Pro";
+        /// <returns>The Process Name.</returns>
+        protected override String GetProcessName() => "";
 
         /// <summary>
-        /// Gets the Process Name of the Client Application.
+        /// The Bundle Idenitfier. This is not used by the CommandPost Plugin.
         /// </summary>
-        /// <returns>The Process Name as a string.</returns>
-        protected override String GetProcessName() => "Final Cut Pro";
-
-        /// <summary>
-        /// The the Bundle Identifier(s) of the Client Application.
-        /// </summary>
-        /// <returns>An array of Bundle Identifiers.</returns>
-        protected override String[] GetBundleNames() => new[] { "com.apple.FinalCut", "com.apple.FinalCutTrial" };
+        /// <returns>The Bundle Identifier.</returns>
+        protected override String GetBundleName() => "";
     }
 }
