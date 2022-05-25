@@ -162,6 +162,7 @@
     <EmbeddedResource Include="JSON\Commands\commandsfromwebsocket.json" />
     <EmbeddedResource Include="JSON\Adjustments\adjustments-noreset.json" />
     <EmbeddedResource Include="Resources\WheelTools\WheelToolShuttle\WheelToolShuttle.png" />
+    <EmbeddedResource Include="DefaultProfile20.lp5" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
