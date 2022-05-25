@@ -54,7 +54,7 @@
           <externalConsole>True</externalConsole>
         </Command>
         <Command>
-          <type>AfterBuild</type>
+          <type>Custom</type>
           <command>open -n /Applications/Loupedeck.app</command>
         </Command>
       </CustomCommands>
@@ -129,6 +129,7 @@
     <Compile Include="Models\Events\LanguageChangedValueEventArgs.cs" />
     <Compile Include="Adjustments\AdjustmentsWithoutResetFromJSON.cs" />
     <Compile Include="Adjustments\PluginDynamicAdjustmentWithParametersSetInOnLoad.cs" />
+    <Compile Include="WheelTools\Shuttle.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="PluginConfiguration.json" />
@@ -160,6 +161,7 @@
     <EmbeddedResource Include="Localization\CommandPostPlugin_ko-KO.xliff" />
     <EmbeddedResource Include="JSON\Commands\commandsfromwebsocket.json" />
     <EmbeddedResource Include="JSON\Adjustments\adjustments-noreset.json" />
+    <EmbeddedResource Include="Resources\WheelTools\WheelToolShuttle\WheelToolShuttle.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
