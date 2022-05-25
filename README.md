@@ -94,6 +94,16 @@ You can now apply "Favourite 01" to whatever knob or button you want to trigger 
 
 ![Favourites](Documentation/Images/06-loupedeck-favourites.png)
 
+## Loupedeck Marketplace:
+
+Currently the Loupedeck Plugin is bundled within the CommandPost Application.
+
+As a result, the `LoupedeckPackage.yaml` file is actually stored within the main CommandPost repository.
+
+You can access this file [here](https://github.com/CommandPost/CommandPost/blob/issue/2973-loupedeck-plugin/src/plugins/core/loupedeckplugin/plugin/CommandPostPlugin/metadata/LoupedeckPackage.yaml) - noting that it's currently in a seperate branch, not the primary `develop` branch.
+
+You can learn more about the `LoupedeckPackage.yaml` file [here](https://github.com/Loupedeck/LoupedeckPluginSdk4/discussions/2).
+
 ## Localisation:
 
 To keep the CommandPost Loupedeck Plugin as simple and as friendly as possible, we use basic JSON files to store all localisation information.
@@ -112,7 +122,7 @@ Here's an explanation of the JSON files we currently use:
 
 ### adjustments.json
 
-This stores all the adjustment (i.e. knob) actions in a simple JSON table, where the key is the internal identifier and the value is the group identifier.
+This stores all the adjustment (i.e. knob) actions that have a reset (i.e. knob press) in a simple JSON table, where the key is the internal identifier and the value is the group identifier.
 
 For example:
 
@@ -124,6 +134,21 @@ For example:
 ```
 
 You can modify this file on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/blob/main/CommandPostPlugin/CommandPostPlugin/JSON/Adjustments/adjustments.json).
+
+### adjustments-noreset.json
+
+This stores all the adjustment (i.e. knob) actions that don't have a reset (i.e. a knob press) in a simple JSON table, where the key is the internal identifier and the value is the group identifier.
+
+For example:
+
+```json
+{
+  "CommandPostFavourite01":                         "CommandPostFavourites",
+  "CommandPostFavourite02":                         "CommandPostFavourites"
+}
+```
+
+You can modify this file on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/blob/main/CommandPostPlugin/CommandPostPlugin/JSON/Adjustments/adjustments-noreset.json).
 
 ### commands.json
 
