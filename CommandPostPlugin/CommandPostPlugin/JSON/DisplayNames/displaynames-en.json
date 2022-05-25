@@ -83,6 +83,8 @@
   "Timeline.PlayheadX16":                                                                       "Playhead x16",
   "Timeline.PlayheadX20":                                                                       "Playhead x20",
 
+  "Timeline.History":                                                                           "History",
+
   "Timeline.Move 10 Frames":                                                                    "Move 10 Frames",
 
   "Timeline.Frame":                                                                             "Frame",
@@ -94,6 +96,7 @@
   "Timeline.Clip":                                                                              "Clip",
 
   "Timeline.Slide":                                                                             "Slide",
+  "Timeline.Roll":                                                                              "Roll",
 
   "Timeline.Select Edge":                                                                       "Select Edge",
   "Timeline.Select Video Edge":                                                                 "Select Video Edge",
