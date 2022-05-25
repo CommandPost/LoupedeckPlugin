@@ -75,13 +75,13 @@
   "Video Inspector.Compositing.Blend Mode.Alpha Add":                                           "Alpha Add",
   "Video Inspector.Compositing.Blend Mode.Premultiplied Mix":                                   "Premultiplied Mix",
 
-  "Timeline.Playhead":                                                                          "Playhead (x01)",
-  "Timeline.PlayheadX2":                                                                        "Playhead (x02)",
-  "Timeline.PlayheadX4":                                                                        "Playhead (x04)",
-  "Timeline.PlayheadX8":                                                                        "Playhead (x08)",
-  "Timeline.PlayheadX12":                                                                       "Playhead (x12)",
-  "Timeline.PlayheadX16":                                                                       "Playhead (x16)",
-  "Timeline.PlayheadX20":                                                                       "Playhead (x20)",
+  "Timeline.Playhead":                                                                          "Playhead x01",
+  "Timeline.PlayheadX2":                                                                        "Playhead x02",
+  "Timeline.PlayheadX4":                                                                        "Playhead x04",
+  "Timeline.PlayheadX8":                                                                        "Playhead x08",
+  "Timeline.PlayheadX12":                                                                       "Playhead x12",
+  "Timeline.PlayheadX16":                                                                       "Playhead x16",
+  "Timeline.PlayheadX20":                                                                       "Playhead x20",
 
   "Timeline.Move 10 Frames":                                                                    "Move 10 Frames",
 
