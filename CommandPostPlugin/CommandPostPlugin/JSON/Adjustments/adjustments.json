@@ -1,6 +1,6 @@
 {
-  "Macros.Trim Left Edge":                          "FCP.Macros",
-  "Macros.Trim Right Edge":                         "FCP.Macros",
+  "FCP.Automation.Trim Left Edge":                  "FCP.Automation",
+  "FCP.Automation.Trim Right Edge":                 "FCP.Automation",
 
   "Audio Inspector.Volume":                         "FCP.Audio Inspector",
 

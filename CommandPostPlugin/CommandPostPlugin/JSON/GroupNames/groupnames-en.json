@@ -6,9 +6,11 @@
 
   "CommandPostFavourites":                    "CP: Favourites",
 
-  "FCP.ShareDestinations":                    "FCP: Share Destinations",
+  "FCP.Workflow Extensions":                  "FCP: Workflow Extensions",
 
-  "FCP.Macros":                               "FCP: Macros",
+  "FCP.Share Destinations":                   "FCP: Share Destinations",
+
+  "FCP.Automation":                           "FCP: Automation",
 
   "FCP.Audio Inspector":                      "FCP: Audio Inspector",
   "FCP.Video Inspector":                      "FCP: Video Inspector",

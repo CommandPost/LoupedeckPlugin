@@ -6,7 +6,11 @@
   "ToggleMissionControl":                                                                   "macOS.Spaces",
   "ToggleShowDesktop":                                                                      "macOS.Spaces",
 
-  "Macros.Toggle Fullscreen":                                                               "FCP.Macros",
+  "FCP.Automation.Toggle Fullscreen":                                                       "FCP.Automation",
+  "FCP.Automation.Timeline Batch Export":                                                   "FCP.Automation",
+  "FCP.Automation.Export Timeline Index as CSV":                                            "FCP.Automation",
+  "FCP.Automation.Export Browser as CSV":                                                   "FCP.Automation",
+  "FCP.Automation.Scrolling Timeline":                                                      "FCP.Automation",
 
   "FCP.Viewer.Show Horizon":                                                                "FCP.Viewer",
 

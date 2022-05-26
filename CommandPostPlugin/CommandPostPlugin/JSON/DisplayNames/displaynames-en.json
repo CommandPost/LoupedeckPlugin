@@ -6,9 +6,14 @@
   "ToggleMissionControl":                                                                       "Mission Control",
   "ToggleShowDesktop":                                                                          "Show Desktop",
 
-  "Macros.Toggle Fullscreen":                                                                   "Toggle Fullscreen",
-  "Macros.Trim Left Edge":                                                                      "Trim Left Edge",
-  "Macros.Trim Right Edge":                                                                     "Trim Right Edge",
+  "FCP.Automation.Timeline Batch Export":                                                       "Timeline Batch Export",
+  "FCP.Automation.Export Timeline Index as CSV":                                                "Timeline Index to CSV",
+  "FCP.Automation.Export Browser as CSV":                                                       "Browser to CSV",
+  "FCP.Automation.Scrolling Timeline":                                                          "Scrolling Timeline",
+
+  "FCP.Automation.Toggle Fullscreen":                                                           "Toggle Fullscreen",
+  "FCP.Automation.Trim Left Edge":                                                              "Trim Left Edge",
+  "FCP.Automation.Trim Right Edge":                                                             "Trim Right Edge",
 
   "Viewer.Color Channels":                                                                      "Color Channels",
 
