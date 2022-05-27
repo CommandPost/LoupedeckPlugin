@@ -12,7 +12,7 @@ Once installed you can then trigger a variety of CommandPost actions directly wi
 
 This plugin will eventually be bundled within CommandPost, so you should never have to download it directly from this repository - as we'll include a compiled version within CommandPost.
 
-However, prior to it being officially included in CommandPost, you can find beta builds here in this repository.
+However, prior to it being officially included in CommandPost, you can find beta builds [here](https://github.com/CommandPost/LoupedeckPlugin/releases) in this repository.
 
 This plugin is written and maintained by the CommandPost team, and will remain free and open-source.
 
