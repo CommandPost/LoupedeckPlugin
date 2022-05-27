@@ -14,47 +14,15 @@ This plugin will eventually be bundled within CommandPost, so you should never h
 
 However, prior to it being officially included in CommandPost, you can find beta builds here in this repository.
 
-Feature requests and bug reports are very much welcome!
+This plugin is written and maintained by the CommandPost team, and will remain free and open-source.
 
-## Frequently Asked Questions
-
-As we get questions about the Loupedeck Plugin for CommandPost we'll try and answer them here.
-
-### Can the CommandPost Loupedeck Plugin actions only be used with Final Cut Pro?
-
-No, the CommandPost Loupedeck Plugin is an "Universal" plugin, so you can use it with any application.
-
-To enable CommandPost Loupedeck Plugin actions within the LoupedeckConfig application, select the item next to plugins:
-
-![Plugin Settings](Documentation/Images/11-plugins-settings.png)
-
-You can then tick "CommandPost" under the "Universal Plugins" list:
-
-![Universal Plugins](Documentation/Images/12-universal-plugins.png)
-
-### Do I still need to use the Loupedeck4.0 Command Set?
-
-Currently the official Final Cut Pro support for Loupedeck forcefully installs and changes to the Loupedeck4.0 Command Set when you launch the Loupedeck service.
-
-CommandPost does not require a specific Command Set to be installed, as it reads the active Command Set each time you try and trigger a Command Set action.
-
-If you trigger an action that does not have a Command Set applied, you'll be presented with a macOS notification like the below:
-
-![Command Set Notification](Documentation/Images/08-commandsset-notification.png)
-
-When you hover your mouse over the notification, you're presented with the option to "Assign Shortcut":
-
-![Command Set Notification](Documentation/Images/09-commandsset-notification-hover.png)
-
-When you click on "Assign Shortcut" it will take you to the Final Cut Pro Command Editor, and pre-populate the shortcut you want to assign:
-
-![Command Editor](Documentation/Images/10-command-editor.png)
+Feature requests and bug reports are very much welcome - you can [submit issues here](https://github.com/CommandPost/LoupedeckPlugin/issues).
 
 ## Installing the Loupedeck Plugin Beta Releases:
 
 You can download the latest beta release of CommandPost with the Loupedeck Plugin [here](https://github.com/CommandPost/LoupedeckPlugin/releases).
 
-During this beta testing phase, we strongly recommend completely uninstalling CommandPost prior to testing a new beta release using the Uninstall tool in the DMG download:
+Although not compulsory, during this beta testing phase, we strongly recommend completely uninstalling CommandPost prior to testing a new beta release using the Uninstall tool in the DMG download:
 
 ![CommandPost Menubar](Documentation/Images/04-uninstall.png)
 
@@ -73,6 +41,66 @@ When installing the Loupedeck Plugin for the first time, or if the Loupedeck Plu
 Once installed, you can access the CommandPost actions from the CommandPost icon within the LoupedeckConfig application.
 
 ![LoupedeckConfig](Documentation/Images/03-loupedeck.png)
+
+## CommandPost's Workflow Extension:
+
+The Loupedeck Plugin uses CommandPost's new Workflow Extension to control the timeline playhead in Final Cut Pro.
+
+The Workflow Extension will load automatically when you trigger an action that requires it.
+
+You can learn more about the Workflow Extension [here](https://help.commandpost.io/workflow-extension/workflowextension).
+
+![Workflow Extension](Documentation/Images/07-workflow-extension.png)
+
+## Known Issues:
+
+- Depending on how many effects, transitions, generators and titles you have installed on your system, the LoupedeckConfig application can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow. Loupedeck is aware of this and will hopefully fix in a future update.
+- Currently changing the language via the LoupedeckConfig application menubar won't automatically update the CommandPost actions in the LoupedeckConfig interface. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update. However, most actions will update on the hardware itself. Loupedeck is aware of this and will hopefully fix in a future update.
+- Currently there are a bunch of parameters that have a "reset" (i.e. knob press) that doesn't do anything, and the reset commands shouldn't be appearing in the actions list. This is a bug in the Loupedeck API. Loupedeck is aware of this and will hopefully fix in a future update.
+
+## Frequently Asked Questions
+
+As we get questions about the Loupedeck Plugin for CommandPost we'll try and answer them here.
+
+### Does the Loupedeck Plugin override CommandPost's native plugin support?
+
+Yes, if you enable the Loupedeck Plugin, you won't be able to use CommandPost's native/direct Loupedeck CT and Loupedeck Live panel support.
+
+After enabling the Loupedeck Plugin in CommandPost, if you try and enable Loupedeck CT or Loupedeck Live support you'll be presented with the following error message:
+
+![Native Support Disabled](Documentation/Images/13-native-support-disabled.png)
+
+To re-enable native support, you'll need to disable the Loupedeck Plugin - you cannot use both at once.
+
+### Can the CommandPost Loupedeck Plugin actions only be used with Final Cut Pro?
+
+No, the CommandPost Loupedeck Plugin is an "Universal" plugin, so you can use it with any application.
+
+To enable CommandPost Loupedeck Plugin actions within the LoupedeckConfig application, select the item next to plugins:
+
+![Plugin Settings](Documentation/Images/11-plugins-settings.png)
+
+You can then tick "CommandPost" under the "Universal Plugins" list:
+
+![Universal Plugins](Documentation/Images/12-universal-plugins.png)
+
+### Do I still need to use the Loupedeck4.0 Command Set?
+
+Currently the official Final Cut Pro support for Loupedeck forcefully installs and changes to the Loupedeck4.0 Command Set when you launch the Loupedeck service. There's currently no way to disable this forceful install.
+
+CommandPost does not require a specific Command Set to be installed, as it reads the active Command Set each time you try and trigger a Command Set action.
+
+If you trigger an action that does not have a Command Set applied, you'll be presented with a macOS notification like the below:
+
+![Command Set Notification](Documentation/Images/08-commandsset-notification.png)
+
+When you hover your mouse over the notification, you're presented with the option to "Assign Shortcut":
+
+![Command Set Notification](Documentation/Images/09-commandsset-notification-hover.png)
+
+When you click on "Assign Shortcut" it will take you to the Final Cut Pro Command Editor, and pre-populate the shortcut you want to assign:
+
+![Command Editor](Documentation/Images/10-command-editor.png)
 
 ## CommandPost Favourites:
 
@@ -241,21 +269,6 @@ For example:
 ```
 
 You can modify these files on GitHub [here](https://github.com/CommandPost/LoupedeckPlugin/tree/main/CommandPostPlugin/CommandPostPlugin/JSON/General).
-
-## Known Issues:
-
-- Depending on how many effects, transitions, generators and titles you have installed on your system, LoupedeckConfig can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow.
-- Currently changing the language via the LoupedeckConfig menubar won't automatically update the CommandPost actions in the LoupedeckConfig interface. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update. However, most actions will update on the hardware itself.
-
-## CommandPost's Workflow Extension:
-
-The Loupedeck Plugin uses CommandPost's Workflow Extension to control the timeline playhead in Final Cut Pro.
-
-The Workflow Extension will load automatically when you trigger an action that requires it.
-
-You can learn more about the Workflow Extension [here](https://help.commandpost.io/workflow-extension/workflowextension).
-
-![Workflow Extension](Documentation/Images/07-workflow-extension.png)
 
 ## What is CommandPost?
 
