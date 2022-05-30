@@ -84,6 +84,9 @@
                         // Save the command to the cache:
                         this.CachedCommands[command.Key] = command.Value;
                         this.CachedValues[command.Key] = actionID;
+
+                        // Inform Loupedeck that command display name and/or image has changed:
+                        this.ActionImageChanged();
                     }                    
                 }
             };
