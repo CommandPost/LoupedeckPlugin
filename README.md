@@ -10,21 +10,17 @@ This repository contains a Loupedeck Plugin written in C#, that allows you to co
 
 Once installed you can then trigger a variety of CommandPost actions directly within the Loupedeck software.
 
-This plugin will eventually be bundled within CommandPost, so you should never have to download it directly from this repository - as we'll include a compiled version within CommandPost.
+**This plugin is bundled within CommandPost, so you should never have to download it directly from this repository - as we'll include a compiled version within CommandPost.**
 
-However, prior to it being officially included in CommandPost, you can find beta builds [here](https://github.com/CommandPost/LoupedeckPlugin/releases) in this repository.
+You can download the latest CommandPost release [here](https://commandpost.io/#download).
 
 This plugin is written and maintained by the CommandPost team, and will remain free and open-source.
 
 Feature requests and bug reports are very much welcome - you can [submit issues here](https://github.com/CommandPost/LoupedeckPlugin/issues).
 
-## Installing the Loupedeck Plugin Beta Releases:
+## Installing the Loupedeck Plugin:
 
-You can download the latest beta release of CommandPost with the Loupedeck Plugin [here](https://github.com/CommandPost/LoupedeckPlugin/releases).
-
-Although not compulsory, during this beta testing phase, we strongly recommend completely uninstalling CommandPost prior to testing a new beta release using the Uninstall tool in the DMG download:
-
-![CommandPost Menubar](Documentation/Images/04-uninstall.png)
+You can download the latest release of CommandPost with the Loupedeck Plugin [here](https://commandpost.io/#download).
 
 You can find general information on how to install CommandPost [here](https://help.commandpost.io/getting-started/installation).
 
