@@ -29,7 +29,7 @@
         /// <summary>
         /// A Loupedeck Adjustment Plugin that's populated from data on a JSON file (without resets).
         /// </summary>        
-        public CommandPostAdjustmentsWithoutResetFromJSON() : base(true) // TODO: hasReset should be set to false, but if I do that, this class fails to load?!?
+        public CommandPostAdjustmentsWithoutResetFromJSON() : base(false) // NOTE: This only works on LoupedeckConfig 5.2 or later.
         {
         }
 
