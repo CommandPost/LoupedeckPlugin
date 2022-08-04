@@ -6,6 +6,10 @@
   "ToggleMissionControl":                                                                       "Mission Control",
   "ToggleShowDesktop":                                                                          "Show Desktop",
 
+  "ChangeUserInterfaceElementUnderMouse":                                                       "Change User Interface Element Under Mouse",
+  "IncrementUserInterfaceElementUnderMouse":                                                    "Increment User Interface Element Under Mouse",
+  "DecrementUserInterfaceElementUnderMouse":                                                    "Decrement User Interface Element Under Mouse",
+
   "Splatify.Launch":                                                                            "Launch",
   "Splatify.Play":                                                                              "Play",
   "Splatify.TogglePlayPause":                                                                   "Toggle Play/Pause",

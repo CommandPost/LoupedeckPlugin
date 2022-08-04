@@ -1,6 +1,8 @@
 {
   "Cinematic.Focus Point":                          "FCP.Cinematic",
 
+  "ChangeUserInterfaceElementUnderMouse":           "macOS.Accessibility",
+
   "360 Viewer.Pan":                                 "FCP.360 Viewer",
   "360 Viewer.Tilt":                                "FCP.360 Viewer",
 

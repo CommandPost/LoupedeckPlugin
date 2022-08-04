@@ -6,6 +6,9 @@
   "ToggleMissionControl":                                                                   "macOS.Spaces",
   "ToggleShowDesktop":                                                                      "macOS.Spaces",
 
+  "IncrementUserInterfaceElementUnderMouse":                                                "macOS.Accessibility",
+  "DecrementUserInterfaceElementUnderMouse":                                                "macOS.Accessibility",
+
   "Splatify.Launch":                                                                        "Splatify",
   "Splatify.Play":                                                                          "Splatify",
   "Splatify.TogglePlayPause":                                                               "Splatify",

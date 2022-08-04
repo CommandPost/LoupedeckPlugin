@@ -3,9 +3,10 @@
   
   "Splatify":                                 "Spotify",
 
+  "macOS.Accessibility":                      "macOS: Accessibility",
   "macOS.Spaces":                             "macOS: Spaces",
   "macOS.Shortcuts":                          "macOS: Shortcuts App",
-
+  
   "CommandPostFavourites":                    "CP: Favourites",
 
   "FCP.Keyword Shortcuts":                    "FCP: Keyword Shortcuts",
