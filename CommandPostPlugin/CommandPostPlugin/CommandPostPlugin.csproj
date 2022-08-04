@@ -128,7 +128,6 @@
     <Compile Include="Models\Events\LanguageChangedEventArgs.cs" />
     <Compile Include="Models\Events\LanguageChangedValueEventArgs.cs" />
     <Compile Include="Adjustments\AdjustmentsWithoutResetFromJSON.cs" />
-    <Compile Include="Adjustments\PluginDynamicAdjustmentWithParametersSetInOnLoad.cs" />
     <Compile Include="WheelTools\Shuttle.cs" />
   </ItemGroup>
   <ItemGroup>

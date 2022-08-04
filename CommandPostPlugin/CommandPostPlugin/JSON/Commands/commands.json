@@ -6,6 +6,18 @@
   "ToggleMissionControl":                                                                   "macOS.Spaces",
   "ToggleShowDesktop":                                                                      "macOS.Spaces",
 
+  "Splatify.Launch":                                                                        "Splatify",
+  "Splatify.Play":                                                                          "Splatify",
+  "Splatify.TogglePlayPause":                                                               "Splatify",
+  "Splatify.Pause":                                                                         "Splatify",
+  "Splatify.PreviousTrack":                                                                 "Splatify",
+  "Splatify.NextTrack":                                                                     "Splatify",
+  "Splatify.FastForwardFiveSeconds":                                                        "Splatify",
+  "Splatify.RewindFiveSeconds":                                                             "Splatify",
+  "Splatify.VolumeUp":                                                                      "Splatify",
+  "Splatify.VolumeDown":                                                                    "Splatify",
+  "Splatify.DisplayCurrentTrack":                                                           "Splatify",
+
   "FCP.Automation.Toggle Fullscreen":                                                       "FCP.Automation",
   "FCP.Automation.Timeline Batch Export":                                                   "FCP.Automation",
   "FCP.Automation.Export Timeline Index as CSV":                                            "FCP.Automation",

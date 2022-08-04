@@ -6,6 +6,18 @@
   "ToggleMissionControl":                                                                       "Mission Control",
   "ToggleShowDesktop":                                                                          "Show Desktop",
 
+  "Splatify.Launch":                                                                            "Launch",
+  "Splatify.Play":                                                                              "Play",
+  "Splatify.TogglePlayPause":                                                                   "Toggle Play/Pause",
+  "Splatify.Pause":                                                                             "Pause",
+  "Splatify.PreviousTrack":                                                                     "Previous Track",
+  "Splatify.NextTrack":                                                                         "Next Track",
+  "Splatify.FastForwardFiveSeconds":                                                            "Fast Forward Five Seconds",
+  "Splatify.RewindFiveSeconds":                                                                 "Rewind Five Seconds",
+  "Splatify.VolumeUp":                                                                          "Volume Up",
+  "Splatify.VolumeDown":                                                                        "Volume Down",
+  "Splatify.DisplayCurrentTrack":                                                               "Display Current Track",
+
   "FCP.Automation.Timeline Batch Export":                                                       "Timeline Batch Export",
   "FCP.Automation.Export Timeline Index as CSV":                                                "Timeline Index to CSV",
   "FCP.Automation.Export Browser as CSV":                                                       "Browser to CSV",
