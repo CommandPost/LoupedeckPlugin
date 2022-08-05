@@ -52,7 +52,7 @@ You can learn more about the Workflow Extension [here](https://help.commandpost.
 
 - Depending on how many effects, transitions, generators and titles you have installed on your system, the LoupedeckConfig application can be quite slow at loading the list of CommandPost actions. Searching for actions is also incredibly slow. Loupedeck is aware of this and will hopefully fix in a future update.
 - Currently changing the language via the LoupedeckConfig application menubar won't automatically update the CommandPost actions in the LoupedeckConfig interface. You'll need to restart both the Loupedeck Service & LoupedeckConfig application for user interface and actions to update. However, most actions will update on the hardware itself. Loupedeck is aware of this and will hopefully fix in a future update.
-- Currently there are a bunch of parameters that have a "reset" (i.e. knob press) that doesn't do anything, and the reset commands shouldn't be appearing in the actions list. This is a bug in the Loupedeck API. Loupedeck is aware of this and will hopefully fix in a future update.
+- ~~Currently there are a bunch of parameters that have a "reset" (i.e. knob press) that doesn't do anything, and the reset commands shouldn't be appearing in the actions list. This is a bug in the Loupedeck API. Loupedeck is aware of this and will hopefully fix in a future update.~~ This has now been fixed in a Loupedeck Update.
 
 ## Frequently Asked Questions
 
