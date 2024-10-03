@@ -44,8 +44,8 @@
     <EmbeddedResource Include="JSON/Adjustments/adjustments-noreset.json" />
     <EmbeddedResource Include="JSON/Adjustments/adjustments.json" />
 
-    <EmbeddedResource Include="JSON/Commands/commands-noreset.json" />
     <EmbeddedResource Include="JSON/Commands/commands.json" />
+    <EmbeddedResource Include="JSON/Commands/commandsfromwebsocket.json" />
 
     <EmbeddedResource Include="JSON/DisplayNames/displaynames-de.json" />
     <EmbeddedResource Include="JSON/DisplayNames/displaynames-en.json" />
