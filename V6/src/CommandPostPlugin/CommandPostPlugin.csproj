@@ -31,12 +31,15 @@
 
   <!-- Add embedded resources for icon files -->
   <ItemGroup>
-    <EmbeddedResource Include="Resources/*.*" />
+    <EmbeddedResource Include="Resources/Icon/icon-16.png" />
+    <EmbeddedResource Include="Resources/Icon/icon-32.png" />
+    <EmbeddedResource Include="Resources/Icon/icon-48.png" />
+    <EmbeddedResource Include="Resources/Icon/icon-256.png" />
   </ItemGroup>
 
   <!-- Include all files from the JSON folder as embedded resources -->
   <ItemGroup>
-    <EmbeddedResource Include="JSON/*.*" />
+    <EmbeddedResource Include="Resources/JSON/*.*" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
