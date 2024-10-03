@@ -75,6 +75,16 @@ namespace Loupedeck.CommandPostPlugin
             return result;
         }
 
+        // Initializes a new instance of the plugin class.
+        public CommandPostPlugin()
+        {
+            // Initialize the plugin log.
+            PluginLog.Init(this.Log);
+
+            // Initialize the plugin resources.
+            PluginResources.Init(this.Assembly);
+        }
+
         /// <summary>
         /// Triggered when the Plugin loads.
         /// </summary>
