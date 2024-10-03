@@ -43,8 +43,9 @@
     <!-- Include all files from the JSON folder as embedded resources -->
     <EmbeddedResource Include="JSON/Adjustments/adjustments-noreset.json" />
     <EmbeddedResource Include="JSON/Adjustments/adjustments.json" />
-    <EmbeddedResource Include="JSON/Adjustments/commands-noreset.json" />
-    <EmbeddedResource Include="JSON/Adjustments/commands.json" />
+
+    <EmbeddedResource Include="JSON/Commands/commands-noreset.json" />
+    <EmbeddedResource Include="JSON/Commands/commands.json" />
 
     <EmbeddedResource Include="JSON/DisplayNames/displaynames-de.json" />
     <EmbeddedResource Include="JSON/DisplayNames/displaynames-en.json" />
