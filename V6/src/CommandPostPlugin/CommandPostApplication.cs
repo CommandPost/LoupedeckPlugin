@@ -2,21 +2,29 @@ namespace Loupedeck.CommandPostPlugin
 {
     using System;
 
-    // This class can be used to connect the Loupedeck plugin to an application.
-
+    /// <summary>
+    /// The Client Application Class. This is not used by the CommandPost Plugin.
+    /// </summary>
     public class CommandPostApplication : ClientApplication
     {
+        /// <summary>
+        /// The Client Application Class. This is not used by the CommandPost Plugin.
+        /// </summary>
         public CommandPostApplication()
         {
+
         }
 
-        // This method can be used to link the plugin to a Windows application.
+        /// <summary>
+        /// The Process Name. This is not used by the CommandPost Plugin.
+        /// </summary>
+        /// <returns>The Process Name.</returns>
         protected override String GetProcessName() => "";
 
-        // This method can be used to link the plugin to a macOS application.
+        /// <summary>
+        /// The Bundle Idenitfier. This is not used by the CommandPost Plugin.
+        /// </summary>
+        /// <returns>The Bundle Identifier.</returns>
         protected override String GetBundleName() => "";
-
-        // This method can be used to check whether the application is installed or not.
-        public override ClientApplicationStatus GetApplicationStatus() => ClientApplicationStatus.Unknown;
     }
 }
