@@ -28,6 +28,20 @@
   <ItemGroup>
     <PackageReference Include="Fleck" Version="1.2.0" />
   </ItemGroup>
+
+  <!-- Add embedded resources for icon files -->
+  <ItemGroup>
+    <EmbeddedResource Include="src/CommandPostPlugin/Resources/Icon/icon-16.png" />
+    <EmbeddedResource Include="src/CommandPostPlugin/Resources/Icon/icon-32.png" />
+    <EmbeddedResource Include="src/CommandPostPlugin/Resources/Icon/icon-48.png" />
+    <EmbeddedResource Include="src/CommandPostPlugin/Resources/Icon/icon-256.png" />
+  </ItemGroup>
+
+  <!-- Include all files from the JSON folder as embedded resources -->
+  <ItemGroup>
+    <EmbeddedResource Include="src/CommandPostPlugin/Resources/JSON/*.*" />
+  </ItemGroup>
+
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
     <Exec Condition="$(OS) == 'Windows_NT'" Command="echo $(OutputPath) &gt; &quot;$(PluginDir)$(ProjectName).link&quot;" />
     <Exec Condition="$(OS) != 'Windows_NT'" Command="echo $(OutputPath) &gt; $(PluginDir)$(ProjectName).link" />
