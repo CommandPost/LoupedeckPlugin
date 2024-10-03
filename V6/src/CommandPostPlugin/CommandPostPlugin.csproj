@@ -29,17 +29,40 @@
     <PackageReference Include="Fleck" Version="1.2.0" />
   </ItemGroup>
 
-  <!-- Add embedded resources for icon files -->
   <ItemGroup>
+
+    <!-- Add embedded resources for icon files -->
     <EmbeddedResource Include="Resources/Icon/icon-16.png" />
     <EmbeddedResource Include="Resources/Icon/icon-32.png" />
     <EmbeddedResource Include="Resources/Icon/icon-48.png" />
     <EmbeddedResource Include="Resources/Icon/icon-256.png" />
-  </ItemGroup>
 
-  <!-- Include all files from the JSON folder as embedded resources -->
-  <ItemGroup>
-    <EmbeddedResource Include="Resources/JSON/*.*" />
+    <EmbeddedResource Include="Resources/WheelTools/WheelToolColorWheelBase/WheelToolColorWheelBase.png" />
+    <EmbeddedResource Include="Resources/WheelTools/WheelToolShuttle/WheelToolShuttle.png" />
+
+    <!-- Include all files from the JSON folder as embedded resources -->
+    <EmbeddedResource Include="JSON/Adjustments/adjustments-noreset.json" />
+    <EmbeddedResource Include="JSON/Adjustments/adjustments.json" />
+    <EmbeddedResource Include="JSON/Adjustments/commands-noreset.json" />
+    <EmbeddedResource Include="JSON/Adjustments/commands.json" />
+
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-de.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-en.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-fr.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-ja.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-ko.json" />
+
+    <EmbeddedResource Include="JSON/General/general-de.json" />
+    <EmbeddedResource Include="JSON/General/general-en.json" />
+    <EmbeddedResource Include="JSON/General/general-fr.json" />
+    <EmbeddedResource Include="JSON/General/general-ja.json" />
+    <EmbeddedResource Include="JSON/General/general-ko.json" />
+
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-de.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-en.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-fr.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-ja.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-ko.json" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
