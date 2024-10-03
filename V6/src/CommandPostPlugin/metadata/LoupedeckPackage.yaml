@@ -12,7 +12,7 @@ name: CommandPost
 displayName: CommandPost
 
 # Short description of the plugin.
-description: Add a short description of the plugin here.
+description: Allows you to trigger CommandPost Actions within Loupedeck.
 
 # Name of the plugin library file.
 pluginFileName: CommandPostPlugin.dll
@@ -21,10 +21,10 @@ pluginFileName: CommandPostPlugin.dll
 version: 1.0
 
 # Author of the plugin. The author can be a company or an individual developer.
-author: chrishocking
+author: LateNite Films Pty Ltd
 
 # Copyright information.
-copyright: Copyright © 2024 chrishocking. All rights reserved.
+copyright: Copyright © 2024 LateNite Films Pty Ltd. All rights reserved.
 
 
 # ==================================================================================================
@@ -46,7 +46,7 @@ supportedDevices:
     - LoupedeckCtFamily
 
     # LoupedeckPlusFamily covers Loupedeck+ device. Uncomment the following line to support Loupedeck+.
-    #- LoupedeckPlusFamily
+    - LoupedeckPlusFamily
 
 # List of plugin capabilities.
 pluginCapabilities:
@@ -74,7 +74,7 @@ licenseUrl: https://opensource.org/licenses/MIT
 # URL of the support page where the users can send improvement suggestions and report bugs.
 # The URL is shown in Loupedeck Marketplace. The page can be for example a GitHub issues page.
 # NOTE: This setting is recommended when publishing the plugin in Loupedeck Marketplace.
-#supportPageUrl: https://github.com/myusername/myplugin/issues
+supportPageUrl: https://commandpost.io
 
 # URL of the plugin homepage. The URL is shown in Loupedeck Marketplace.
-#homePageUrl: https://github.com/myusername/myplugin
+homePageUrl: https://commandpost.io
