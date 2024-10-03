@@ -1,0 +1,88 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <RootNamespace>Loupedeck.CommandPostPlugin</RootNamespace>
+
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+
+    <PluginApiDir Condition="$(OS) == 'Windows_NT'">C:\Program Files\Logi\LogiPluginService\</PluginApiDir>
+    <PluginApiDir Condition="$(OS) != 'Windows_NT'">/Applications/Utilities/LogiPluginService.app/Contents/MonoBundle/</PluginApiDir>
+
+    <PluginDir Condition="$(OS) == 'Windows_NT'">$(LocalAppData)\Logi\LogiPluginService\Plugins\</PluginDir>
+    <PluginDir Condition="$(OS) != 'Windows_NT'">~/Library/Application\ Support/Logi/LogiPluginService/Plugins/</PluginDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="PluginApi">
+      <HintPath>$(PluginApiDir)PluginApi.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fleck" Version="1.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+
+    <!-- Add embedded resources for icon files -->
+    <EmbeddedResource Include="Resources/Icon/icon-16.png" />
+    <EmbeddedResource Include="Resources/Icon/icon-32.png" />
+    <EmbeddedResource Include="Resources/Icon/icon-48.png" />
+    <EmbeddedResource Include="Resources/Icon/icon-256.png" />
+
+    <EmbeddedResource Include="Resources/WheelTools/WheelToolColorWheelBase/WheelToolColorWheelBase.png" />
+    <EmbeddedResource Include="Resources/WheelTools/WheelToolShuttle/WheelToolShuttle.png" />
+
+    <!-- Include all files from the JSON folder as embedded resources -->
+    <EmbeddedResource Include="JSON/Adjustments/adjustments-noreset.json" />
+    <EmbeddedResource Include="JSON/Adjustments/adjustments.json" />
+
+    <EmbeddedResource Include="JSON/Commands/commands.json" />
+    <EmbeddedResource Include="JSON/Commands/commandsfromwebsocket.json" />
+
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-de.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-en.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-fr.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-ja.json" />
+    <EmbeddedResource Include="JSON/DisplayNames/displaynames-ko.json" />
+
+    <EmbeddedResource Include="JSON/General/general-de.json" />
+    <EmbeddedResource Include="JSON/General/general-en.json" />
+    <EmbeddedResource Include="JSON/General/general-fr.json" />
+    <EmbeddedResource Include="JSON/General/general-ja.json" />
+    <EmbeddedResource Include="JSON/General/general-ko.json" />
+
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-de.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-en.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-fr.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-ja.json" />
+    <EmbeddedResource Include="JSON/GroupNames/groupnames-ko.json" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Condition="$(OS) == 'Windows_NT'" Command="echo $(OutputPath) &gt; &quot;$(PluginDir)$(ProjectName).link&quot;" />
+    <Exec Condition="$(OS) != 'Windows_NT'" Command="echo $(OutputPath) &gt; $(PluginDir)$(ProjectName).link" />
+  </Target>
+
+  <Target Name="CopyMetadata" AfterTargets="PostBuildEvent">
+    <ItemGroup>
+      <MetadataFiles Include="metadata\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(MetadataFiles)" DestinationFolder="$(OutputPath)metadata" />
+  </Target>
+
+  <Target Name="PluginClean" AfterTargets="CoreClean">
+    <Delete Condition="$(OS) == 'Windows_NT'" Files="$(PluginDir)$(ProjectName).link" />
+    <Exec Condition="$(OS) != 'Windows_NT'" Command="rm -f $(PluginDir)$(ProjectName).link" />
+
+    <RemoveDir Directories="$(OutputPath)metadata" />
+  </Target>
+
+</Project>

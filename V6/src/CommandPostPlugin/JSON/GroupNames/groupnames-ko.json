@@ -1,0 +1,18 @@
+{
+  "CommandPostFavouritesPress":                 "CP: 즐겨찾기(보도)",
+  "CommandPostFavouritesTurn":                  "CP: 즐겨찾기(턴)",
+
+  "Video Inspector":                            "FCP: 비디오 검사기",
+
+  "FCPCommandSet.Organization":                 "FCP: 명령 - 조직",
+  "FCPCommandSet.Marking":                      "FCP: 명령 - 표시하기",
+  "FCPCommandSet.Application":                  "FCP: 명령 - 응용 프로그램",
+  "FCPCommandSet.Share":                        "FCP: 명령 - 공유",
+  "FCPCommandSet.General":                      "FCP: 명령 - 일반",
+  "FCPCommandSet.Windows":                      "FCP: 명령 - 윈도우",
+  "FCPCommandSet.View":                         "FCP: 명령 - 보기",
+  "FCPCommandSet.Effects":                      "FCP: 명령 - 효과",
+  "FCPCommandSet.Playback/Navigation":          "FCP: 명령 - 재생/탐색",
+  "FCPCommandSet.Editing":                      "FCP: 명령 - 편집",
+  "FCPCommandSet.Tools":                        "FCP: 명령 - 도구"
+}

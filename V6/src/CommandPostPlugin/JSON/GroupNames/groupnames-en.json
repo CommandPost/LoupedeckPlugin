@@ -1,0 +1,65 @@
+{
+  "KeyboardMaestro":                          "Keyboard Maestro",
+  
+  "Splatify":                                 "Spotify",
+
+  "macOS.Accessibility":                      "macOS: Accessibility",
+  "macOS.Spaces":                             "macOS: Spaces",
+  "macOS.Shortcuts":                          "macOS: Shortcuts App",
+  
+  "CommandPostFavourites":                    "CP: Favourites",
+
+  "FCP.Keyword Shortcuts":                    "FCP: Keyword Shortcuts",
+
+  "FCP.Workflow Extensions":                  "FCP: Workflow Extensions",
+
+  "FCP.Share Destinations":                   "FCP: Share Destinations",
+
+  "FCP.Automation":                           "FCP: Automation",
+
+  "FCP.Audio Inspector":                      "FCP: Audio Inspector",
+  "FCP.Video Inspector":                      "FCP: Video Inspector",
+
+  "FCP.Blend Modes":                          "FCP: Blend Modes",
+
+  "FCP.Color Board":                          "FCP: Color Board",
+  "FCP.Color Wheels":                         "FCP: Color Wheels",
+
+  "FCP.Timeline":                             "FCP: Timeline",  
+
+  "FCP.Viewer":                               "FCP: Viewer",
+  "FCP.360 Viewer":                           "FCP: 360° Viewer",
+
+  "FCP.Multicam":                             "FCP: Multicam",
+
+  "FCP.Cinematic":                            "FCP: Cinematic",
+
+  "FCPPlugin.audioEffect":                    "FCP: Audio Effects",
+  "FCPPlugin.generator":                      "FCP: Generators",
+  "FCPPlugin.title":                          "FCP: Titles",
+  "FCPPlugin.transition":                     "FCP: Transitions",
+  "FCPPlugin.videoEffect":                    "FCP: Video Effects",
+
+  "FCPCommandSet.Application":                "FCP: Shortcuts - Application",
+  "FCPCommandSet.Editing":                    "FCP: Shortcuts - Editing",
+  "FCPCommandSet.Effects":                    "FCP: Shortcuts - Effects",
+  "FCPCommandSet.General":                    "FCP: Shortcuts - General",
+  "FCPCommandSet.Marking":                    "FCP: Shortcuts - Marking",
+  "FCPCommandSet.Organization":               "FCP: Shortcuts - Organization",
+  "FCPCommandSet.Playback/Navigation":        "FCP: Shortcuts - Playback/Navigation",
+  "FCPCommandSet.Share":                      "FCP: Shortcuts - Share",
+  "FCPCommandSet.Tools":                      "FCP: Shortcuts - Tools",
+  "FCPCommandSet.View":                       "FCP: Shortcuts - View",
+  "FCPCommandSet.Windows":                    "FCP: Shortcuts - Windows",
+
+  "FCPMenu.Final Cut Pro":                    "FCP: Menu - Final Cut Pro",
+  "FCPMenu.File":                             "FCP: Menu - File",
+  "FCPMenu.Edit":                             "FCP: Menu - Edit",
+  "FCPMenu.Trim":                             "FCP: Menu - Trim",
+  "FCPMenu.Mark":                             "FCP: Menu - Mark",
+  "FCPMenu.Clip":                             "FCP: Menu - Clip",
+  "FCPMenu.Modify":                           "FCP: Menu - Modify",
+  "FCPMenu.View":                             "FCP: Menu - View",
+  "FCPMenu.Window":                           "FCP: Menu - Window",
+  "FCPMenu.Help":                             "FCP: Menu - Help"  
+}
